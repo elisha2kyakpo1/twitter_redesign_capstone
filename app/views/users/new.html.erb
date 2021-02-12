@@ -1,17 +1,18 @@
 <div class="signup-page">
-  <div>
+  <div class="sign-div">
     <h2>Sign up</h2>
 
     <%= form_for @user do |f| %>
         
       <div class="field">
-        <%= f.text_field :username, autofocus: true, autocomplete: "username", placeholder: 'username' %>
-        <%= f.text_field :fullName, autofocus: true, autocomplete: "fullname", placeholder: 'fullname' %>
+        <%= f.text_field :username, autofocus: true, autocomplete: "username", placeholder: 'username', class: 'text' %><br>
+        <%= f.text_field :fullName, autofocus: true, autocomplete: "fullname", placeholder: 'fullname', class: 'text' %>
       </div>
 
       <div class="actions">
-        <%= f.submit "Sign up" %>
+        <%= f.submit "Sign up", class: 'submit' %>
       </div>
     <% end %>
+      <p class=>Aready a member?<%= link_to 'Sign In', new_session_path, class: 'signup'%></p>
   </div>
 </div>

@@ -13,8 +13,7 @@
   <body>
   	<header>
 		<nav class = "navbar">
-				
-				<p><%#= link_to 'Posts', tweets_path %></p>
+			
 			<%#= form_tag search_posts_path, method: :get do %>
 				<div class = 'search'>
 					<p><%#= text_field_tag :search, nil, placeholder: 'Search...', class: 'search' %></p>
@@ -22,11 +21,9 @@
 				</div>
 			<%# end %>
 			<% if current_user %>
+        <p><%= link_to 'Tweets', tweets_path %></p>
 				<h4>Welcome <%= current_user.username %></h4>
 				<p class ="para_log_out"><%= link_to 'Log Out', logout_path, method: :delete %></p>
-				<%# else %>
-					<p class ="para_sign_in"><%#= link_to 'Sign In', new_session_path %></p>
-					<p class ="para_sign_up"><%#= link_to 'Sign Up', new_user_path %></p>
 			<% end %>
 		</nav>
 	</header>
