@@ -1,21 +1,34 @@
-<section class="main_sec">
-  <header class="header">
-    <% if current_user %>
-      <h4><%= current_user.username %></h4>
-      <p class ="para_log_out"><%= link_to 'Log Out', logout_path, method: :delete %></p>
-    <% end %>
-  </header>
-  
+<section class="d-grid row">  
       <%#= image_tag "image.jpg" %>
-  <nav class = "navbar">
-    <% if current_user %>
-      <h4><%= link_to 'Tweets', tweets_path, class: 'links' %></h4>
-      <h4><%= link_to 'Photos', class: 'links' %></h4>
-      <h4><%= link_to 'Videos', class: 'links' %></h4>
-    <% end %>
-  </nav>
+  <section class="sec2 col-3">
+    <div class="logout">
+      <div>
+        <% if current_user %>
+          <h4><%= current_user.username %></h4>
+          <p class ="log_out"><%= link_to 'Log Out', logout_path, method: :delete %></p>
+        <% end %>
+      </div>
+    </div>
+  </section>
 
-  <section class="sec1">
+  <section class="sec1 p-0 col-9">
+    <header class="header">
+      <% if current_user %>
+        <h4><%= current_user.username %></h4>
+        <p class ="para_log_out"><%= link_to 'Log Out', logout_path, method: :delete %></p>
+      <% end %>
+    </header>
+
+  <section class="container-inner d-flex">
+  <section class="">
+    <nav class = "navbar1">
+      <% if current_user %>
+        <h4><%= link_to 'Tweets', tweets_path, class: 'links' %></h4>
+        <h4><%= link_to 'Photos', class: 'links' %></h4>
+        <h4><%= link_to 'Videos', class: 'links' %></h4>
+      <% end %>
+    </nav>
+      <hr>
     <div>
       <div>
         <%= render 'form', tweet: @tweet %>
@@ -39,9 +52,14 @@
     </div>
   </section>
 
-  <section class="sec2">
+  <article class="articles p-0 col-5">
     <div>
+      <h4 class="text-center pt-2">Who to follow</h4>
     </div>
-  </section>
-
+      <hr class="mt-0">
+    <div>
+      
+    </div>
+  </article>
 </section>
+

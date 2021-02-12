@@ -11,32 +11,46 @@ body {
 .new_tweet,
 .create_tweet,
 .tweet-show,
-.header {
+.header,
+.logout {
   display: flex;
   justify-content: center;
 }
 
-.main_sec {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 1fr 2fr 2fr;
-  -ms-grid-rows: 1fr 2fr;
-}
-
-.navbar {
+.navbar1 {
   display: flex;
+  align-items: center;
 }
 
 h4 {
-  color: #fff;
+  color: #343a40;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 800;
+  opacity: 0.5;
+  font-size: 18px !important;
 }
 
 .sec2 {
   background-color: #343a40;
-  height: 40px;
+  height: 100vh;
+}
+
+.container-inner {
+  display: flex;
+}
+
+.articles {
+  border-left: 1px solid #ced4da;
+  height: 100vh;
+}
+
+.logout div {
+  flex: 1;
+  margin-top: auto;
 }
 
 .header {
+  padding-top: 25px;
   background-color: #1da1f2;
 }
 
@@ -48,7 +62,7 @@ h4 {
 .create_tweet {
   background-color: #fff;
   padding: 8px;
-  margin: 15px;
+  margin: 8px;
   border-radius: 8px;
 }
 
@@ -62,6 +76,7 @@ h4 {
   padding: 8px 0 0 8px;
   width: 100%;
   font-size: 18px;
+  outline-color: #1da1f2;
 }
 
 .sign-div {
@@ -114,8 +129,7 @@ small {
   width: 50%;
 }
 
-label,
-h4 {
+label {
   color: #343a40;
   font-size: 18px;
   font-family: Arial, Helvetica, sans-serif;
@@ -133,13 +147,13 @@ h4 {
   padding-left: 15px;
 }
 
-.navbar h4,
+.navbar1 h4,
 .authored,
 .author {
   margin: 0;
 }
 
-.navbar h4 {
+.navbar1 h4 {
   padding-left: 8px;
 }
 
