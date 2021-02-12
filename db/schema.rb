@@ -30,8 +30,8 @@ ActiveRecord::Schema.define(version: 2021_02_11_154912) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "Username"
-    t.string "FullName"
+    t.string "username"
+    t.string "fullName"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

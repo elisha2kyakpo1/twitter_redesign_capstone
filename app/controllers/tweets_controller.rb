@@ -1,4 +1,5 @@
 class TweetsController < ApplicationController
+  before_action :require_login, only: %i[index]
   before_action :set_tweet, only: %i[show edit update destroy]
 
   def index
@@ -28,7 +29,7 @@ class TweetsController < ApplicationController
   # end
 
   def create
-    @tweet = current_user.authored.build(tweet_params)
+    @tweet = current_user.tweets.build(tweet_params)
 
     if @tweet.save
       redirect_to root_path,
@@ -65,6 +66,6 @@ class TweetsController < ApplicationController
   end
 
   def tweet_params
-    params.require(:tweet).permit(:Text, :user_id)
+    params.require(:tweet).permit(:Text, :author_id)
   end
 end

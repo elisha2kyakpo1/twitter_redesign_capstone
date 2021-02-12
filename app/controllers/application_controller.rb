@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   def require_login
     return if current_user
 
-    redirect_to new_session_path, alert: 'Sign up or Log in to see the events!'
+    redirect_to new_session_path, alert: 'Sign up or Log in!'
   end
 
   def current_user

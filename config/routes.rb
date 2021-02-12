@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :sessions
+  delete 'logout' => 'sessions#destroy'
+  resources :users
   resources :tweets
   root to: 'tweets#index'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html

@@ -32,8 +32,8 @@ class UsersController < ApplicationController
 
     if @user.save
       session[:user_id] = @user.id
-      redirect_to events_path,
-                  notice: "Hi #{@user.name}, you successfully Signed up!"
+      redirect_to tweets_path,
+                  notice: "Hi #{@user.username}, you successfully Signed up!"
     else
       render :new
     end
@@ -49,6 +49,6 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:Username, :fullName, :Password)
+    params.require(:user).permit(:username, :fullName)
   end
 end
