@@ -8,9 +8,23 @@ body {
 .edit,
 .signin,
 .navbar,
-.signup-page {
+.signup-page,
+.new_tweet,
+.create_tweet {
   display: flex;
   justify-content: center;
+}
+
+.tweet {
+  border-radius: 5px;
+  border-color: #ced4da;
+  width: 100%;
+}
+
+.create_tweet {
+  background-color: #fff;
+  padding: 8px;
+  border-radius: 5px;
 }
 
 .sign-div {
@@ -60,6 +74,14 @@ small {
   box-shadow: 0 0 10px lightgray;
   margin-top: 25px;
   width: 50%;
+}
+
+label {
+  color: #343a40;
+  font-size: 18px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 800;
+  opacity: 0.5;
 }
 
 .posts-div p {
@@ -130,7 +152,7 @@ h2 {
 }
 
 .notice {
-  color: #16a058;
+  color: #075985;
 }
 
 .para,

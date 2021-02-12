@@ -3,30 +3,17 @@ class TweetsController < ApplicationController
   before_action :set_tweet, only: %i[show edit update destroy]
 
   def index
+    @tweet = Tweet.new
     @tweets = Tweet.all
   end
 
   def show; end
 
   def new
-    @tweet = Tweet.new
+    # @tweet = Tweet.new
   end
 
   def edit; end
-
-  # def create
-  #   @tweet = Tweet.new(tweet_params)
-
-  #   respond_to do |format|
-  #     if @tweet.save
-  #       format.html { redirect_to @tweet, notice: 'Tweet was successfully created.' }
-  #       format.json { render :show, status: :created, location: @tweet }
-  #     else
-  #       format.html { render :new, status: :unprocessable_entity }
-  #       format.json { render json: @tweet.errors, status: :unprocessable_entity }
-  #     end
-  #   end
-  # end
 
   def create
     @tweet = current_user.tweets.build(tweet_params)
