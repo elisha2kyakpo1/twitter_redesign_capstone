@@ -1,5 +1,5 @@
 body {
-  background-color: #f3f4f6;
+  background-color: #f3f4f6 !important;
   margin: 0;
 }
 
@@ -83,6 +83,11 @@ h4 {
   background-color: #fff;
   padding: 15px 30px;
   border-radius: 10px;
+}
+
+.sign-div,
+.signin {
+  margin-top: 40px;
 }
 
 .sign-para {
