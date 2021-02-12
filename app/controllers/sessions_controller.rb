@@ -1,8 +1,8 @@
 class SessionsController < ApplicationController
   def create
-    user = User.find_by_username(params[:name])
+    user = User.find_by_username(params[:username])
     if user
-      session[:user_id] = user.id
+      session[:author_id] = user.id
       redirect_to tweets_path, notice: 'Logged in succussfully!'
     else
       render 'new', alert: 'The name is invalid'
@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    session[:user_id] = nil
+    session[:author_id] = nil
     redirect_to root_path, notice: 'Logged out succussfully!'
   end
 end

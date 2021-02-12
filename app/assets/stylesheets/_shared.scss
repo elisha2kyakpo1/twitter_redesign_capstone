@@ -1,6 +1,6 @@
 body {
-  background-color: #1da1f2;
-  margin: 33px;
+  background-color: #ced4da;
+  margin: 0;
 }
 
 .alert,
@@ -10,21 +10,34 @@ body {
 .navbar,
 .signup-page,
 .new_tweet,
-.create_tweet {
+.create_tweet,
+.tweet-show {
   display: flex;
   justify-content: center;
+}
+
+.navbar {
+  background-color: #1da1f2;
+}
+
+.tweet-show,
+.create_tweet {
+  background-color: #fff;
+  padding: 8px;
+  margin: 15px;
+  border-radius: 8px;
+}
+
+.sec1 {
+  background-color: #ced4da;
 }
 
 .tweet {
   border-radius: 5px;
   border-color: #ced4da;
+  padding: 8px 0 0 8px;
   width: 100%;
-}
-
-.create_tweet {
-  background-color: #fff;
-  padding: 8px;
-  border-radius: 5px;
+  font-size: 18px;
 }
 
 .sign-div {

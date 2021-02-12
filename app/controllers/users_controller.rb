@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   def index
-    # @users = User.all
+    @users = User.all
   end
 
   def new
@@ -31,7 +31,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
 
     if @user.save
-      session[:user_id] = @user.id
+      session[:author_id] = @user.id
       redirect_to tweets_path,
                   notice: "Hi #{@user.username}, you successfully Signed up!"
     else
