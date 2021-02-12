@@ -1,5 +1,5 @@
 body {
-  background-color: #ced4da;
+  background-color: #f3f4f6;
   margin: 0;
 }
 
@@ -7,17 +7,41 @@ body {
 .div-user,
 .edit,
 .signin,
-.navbar,
 .signup-page,
 .new_tweet,
 .create_tweet,
-.tweet-show {
+.tweet-show,
+.header {
   display: flex;
   justify-content: center;
 }
 
+.main_sec {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 2fr 2fr;
+  -ms-grid-rows: 1fr 2fr;
+}
+
 .navbar {
+  display: flex;
+}
+
+h4 {
+  color: #fff;
+}
+
+.sec2 {
+  background-color: #343a40;
+  height: 40px;
+}
+
+.header {
   background-color: #1da1f2;
+}
+
+.author-data {
+  margin-bottom: 15px;
 }
 
 .tweet-show,
@@ -29,7 +53,7 @@ body {
 }
 
 .sec1 {
-  background-color: #ced4da;
+  background-color: #f3f4f6;
 }
 
 .tweet {
@@ -78,6 +102,7 @@ body {
 }
 
 small {
+  margin-left: auto;
   color: #9ca3af;
 }
 
@@ -89,7 +114,8 @@ small {
   width: 50%;
 }
 
-label {
+label,
+h4 {
   color: #343a40;
   font-size: 18px;
   font-family: Arial, Helvetica, sans-serif;
@@ -101,6 +127,20 @@ label {
   font-size: 20px;
   font-weight: bold;
   font-family: Arial, Helvetica, sans-serif;
+}
+
+.authored {
+  padding-left: 15px;
+}
+
+.navbar h4,
+.authored,
+.author {
+  margin: 0;
+}
+
+.navbar h4 {
+  padding-left: 8px;
 }
 
 .submit {
@@ -178,16 +218,10 @@ a {
   display: inline-block;
   text-decoration: none;
   border-radius: 3px;
-  padding: 3px 8px;
   border: none;
   color: #075985 !important;
-  margin: 0 10px;
 }
 
 .para_sign_in {
   margin-left: auto;
-}
-
-h4 {
-  color: #fff;
 }
