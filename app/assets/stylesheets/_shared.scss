@@ -1,6 +1,8 @@
 body {
   background-color: #f3f4f6 !important;
   margin: 0;
+  box-sizing: border-box;
+  padding: 0;
 }
 
 .alert,
@@ -10,15 +12,19 @@ body {
 .signup-page,
 .new_tweet,
 .create_tweet,
-.header,
-.logout {
+.header {
   display: flex;
   justify-content: center;
 }
 
 .logout {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+}
+
+.nav-side {
+  flex: 1;
+  border-top: 1px solid #334155;
 }
 
 .navbar1 {
@@ -38,8 +44,7 @@ h4 {
 
 .sec2 {
   background-color: #343a40;
-  opacity: 0.9;
-  height: 100vh;
+  padding: 0 !important;
 }
 
 .container-inner,
@@ -248,19 +253,41 @@ h2 {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-a {
-  display: inline-block;
-  text-decoration: none;
-  border-radius: 3px;
-  border: none;
-  color: #075985 !important;
+.follow,
+.profile {
+  justify-content: center;
+}
+
+.profile {
+  flex-direction: column;
 }
 
 .para_sign_in {
   margin-left: auto;
 }
 
+.log-homes {
+  padding: 5px 0;
+  display: flex;
+  justify-content: center;
+}
+
 .log_out,
-.user {
-  color: #075985 !important;
+.user,
+.log {
+  display: inline-block;
+  color: #6b7280 !important;
+}
+
+.log {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.log-homes:hover {
+  background-color: #1da1f2;
+}
+
+.log:hover {
+  color: #fff !important;
 }

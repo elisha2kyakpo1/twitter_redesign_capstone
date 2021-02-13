@@ -1,12 +1,24 @@
 <section class="d-grid row">  
       <%#= image_tag "image.jpg" %>
-  <section class="sec2 col-2">
+  <section class="sec2 container-fluid col-2">
     <div class="logout">
-      <div>
+      <div class="profile d-flex">
         <% if current_user %>
-          <h4 class="user"><%= current_user.username %></h4>
-          <p class ="log_out"><%= link_to 'Log Out', logout_path, method: :delete %></p>
+          <h5 class="user"><%= current_user.username %></h5>
+          <p><%= link_to 'Log Out', logout_path, method: :delete, class: 'log_out' %></p>
         <% end %>
+      </div>
+
+      <div class="d-flex follow container-fluid">
+        <div><p class="log_out mr-2">following</p></div>
+        <div><p class="log_out">followers</p></div>
+      </div>
+
+      <div class="nav-side">
+        <div class="log-homes"><h6 class="log">HOME</h6></div>
+        <div class="log-homes"><h6 class="log">CONNECT</h6></div>
+        <div class="log-homes"><h6 class="log">DISCOVER</h6></div>
+        <div class="log-homes"><h6 class="log">PROFILE</h6></div>
       </div>
     </div>
   </section>
@@ -57,9 +69,9 @@
         <h4 class="text-center pt-2">Who to follow</h4>
       </div>
         <hr class="mt-0">
-      <div>
+      <div class="container-fluid">
         <% @users.each do |user| %>
-          <h4><%= link_to user.fullName %></h4>
+          <h5><%= user.username %></h5>
         <% end %>
       </div>
     </article>
