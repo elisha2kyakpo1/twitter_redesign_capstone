@@ -13,8 +13,10 @@
 
       <div class="d-flex follow container-fluid">
         <div>
+           <%#= @users.follower.count %>
           <p class="log_out mr-2">following</p>
         </div>
+           <%#= @users.followed.count %>
         <div><p class="log_out">followers</p></div>
       </div>
 
