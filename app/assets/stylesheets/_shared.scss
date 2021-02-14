@@ -34,7 +34,8 @@ body {
   margin-bottom: 8px;
 }
 
-h4 {
+h4,
+.links {
   color: #343a40;
   font-family: Arial, Helvetica, sans-serif;
   font-weight: 800;
@@ -141,6 +142,15 @@ h4 {
   width: 50%;
 }
 
+.tweet-show div {
+  flex: 1;
+}
+
+.new_tweets {
+  color: #1da1f2;
+  cursor: pointer;
+}
+
 small {
   margin-left: auto;
   color: #9ca3af;
@@ -154,7 +164,8 @@ small {
   width: 50%;
 }
 
-label {
+label,
+.links {
   color: #343a40;
   font-size: 18px;
   font-family: Arial, Helvetica, sans-serif;
@@ -244,7 +255,7 @@ h2 {
 }
 
 .notice {
-  color: #075985;
+  color: #1da1f2 !important;
 }
 
 .para,
@@ -258,10 +269,6 @@ h2 {
   justify-content: center;
 }
 
-.profile {
-  flex-direction: column;
-}
-
 .para_sign_in {
   margin-left: auto;
 }
@@ -270,6 +277,10 @@ h2 {
   padding: 5px 0;
   display: flex;
   justify-content: center;
+}
+
+.log_out {
+  margin-left: auto;
 }
 
 .log_out,

@@ -1,0 +1,15 @@
+<div class="create_tweet">
+  <div class="container-fluid tweet_create flex-1">
+    <div class="flex-1">
+      <%= form_with(model: user) do |form| %>
+
+          <%= form.label :Tweet_Something %><br>
+          <%= form.text_area :Text, class: 'tweet',cols: 60, placeholder: 'Compose new tweet' %>
+      
+        <div class="actions">
+          <%= form.submit 'Tweet', class: 'submit' %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

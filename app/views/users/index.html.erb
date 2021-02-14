@@ -5,7 +5,7 @@
       <div class="profile d-flex mt-2">
         <div>
           <% if current_user %>
-            <h5 class="user"><%= link_to current_user.username, user_path(@user), class: 'user' %></h5>
+            <h5 class="user"><%= link_to current_user.username, users_path, class: 'user' %></h5>
             <p><%= link_to 'Log Out', logout_path, method: :delete, class: 'log_out' %></p>
           <% end %>
         </div>
@@ -64,8 +64,9 @@
               <div class="author-data">
                 <% if current_user %>
                 <h4 class="author"><%= link_to tweet.author.username %></h4>
-                <p class="authored"><%= tweet.author.Text %></p>
+                <p class="authored"><%= tweet.Text %></p>
                 <small><%= time_ago_in_words(tweet.created_at) %> ago </small>
+                <% end %>
                 <%#= link_to 'Show', tweet %>
                 <%#= link_to 'Edit', edit_tweet_path(tweet) %>
                 <%#= link_to 'Destroy', tweet, method: :delete, data: { confirm: 'Are you sure?' } %>
@@ -84,7 +85,7 @@
       </div>
         <hr class="mt-0">
       <div class="container-fluid">
-        <%# @following.each do |f| %>
+        <%# @followers.each do |f| %>
           <p><%#= f.username %> </p>
         <%# end %>
       </div>

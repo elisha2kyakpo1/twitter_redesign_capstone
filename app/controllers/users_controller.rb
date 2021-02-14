@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   def index
     @users = User.all
+    @tweets = Tweet.all
   end
 
   def new
@@ -33,7 +34,7 @@ class UsersController < ApplicationController
       redirect_to tweets_path,
                   notice: "Hi #{@user.username}, you successfully Signed up!"
     else
-      render :new
+      render 'new', notice: 'This username is taken!'
     end
   end
 
@@ -42,6 +43,36 @@ class UsersController < ApplicationController
     @user.destroy
 
     redirect_to users_path
+  end
+
+  def followers
+    @user = User.find(params[:user])
+    @followers = @user.followers(User)
+    @users = User.all
+
+    response = { user: @user, followers: @followers, users: @users }
+
+    respond_to do |format|
+      format.html
+      format.xml { render xml: response }
+    end
+  end
+
+  def following
+    @user = User.find(params[:username])
+    @following = @user.followed(User)
+    @users = User.all
+
+    response = { user: @user, following: @following, users: @users }
+
+    respond_to do |format|
+      format.html # following.html.erb
+      format.xml { render xml: response }
+    end
+  end
+
+  def unfollow(following)
+    following.find_by(followed_id: followings.id).destroy
   end
 
   private
