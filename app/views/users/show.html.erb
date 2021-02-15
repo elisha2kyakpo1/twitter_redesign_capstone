@@ -1,6 +1,6 @@
 <section class="d-grid row">  
       <%#= image_tag "image.jpg" %>
-  <section class="sec2 container-fluid col-2">
+  <section class="sec2 col-2">
     <div class="logout">
       <div class="profile d-flex mt-2">
         <div>
@@ -78,6 +78,7 @@
           <h5 class="log"><%= link_to current_user.fullName, users_path, class: 'log2' %></h5>
           <h6 class="log">@<%= link_to current_user.username, users_path, class: 'log1' %></h6>
         </div>
+          <hr class="mb-0">
         <div class="stats_div d-flex">
           <% if current_user %>
             <div class="stats">
@@ -85,28 +86,27 @@
               <p>Tweets</p>
             </div>
             <div class="stats">
-              <%#= @current_user.tweets.count %>
+              <%= @current_user.followers.count %>
               <p>followers</p>
             </div>
             <div class="stats"> 
-              <%#= @current_user.tweets.count %>
+              <%= @current_user.following.count %>
               <p>following</p>
             </div>
           <% end %>
         </div>
           <hr class="mt-0">
-        <div class="container-fluid">
+        <div class="container-fluid pl-0 pr-0">
+          
           <div>
             <h4 class="text-center pt-2">Followed by</h4>
-            <% if current_user %>
-            <% else %>
-            <% end %>
-          </div>
-
-          <%# @followers.each do |f| %>
-            <p><%#= f.username %> </p>
-          <%# end %>
-          
+            <hr class="mb-0">
+            <div>
+              <% if current_user %>
+              <% else %>
+              <% end %>
+            </div>
+          </div>          
         </div>
       </article>
     </section>

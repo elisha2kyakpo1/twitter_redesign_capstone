@@ -1,12 +1,27 @@
 class User < ApplicationRecord
-  has_many :tweets, foreign_key: :author_id
-  has_many :followers, dependent: :destroy, foreign_key: :follower_id, class_name: 'Following'
-  has_many :followings, foreign_key: :followed_id, class_name: 'Following'
+  has_many :tweets, foreign_key: :author_id, dependent: :destroy
+  has_many :active_followers, dependent: :destroy, foreign_key: :follower_id, class_name: 'Following'
+  has_many :following, through: :active_followers, source: :followed
+  has_many :passive_followings, class_name: 'Following', foreign_key: :followed_id, dependent: :destroy
+  has_many :following, through: :active_followers, source: :followed
+  has_many :followers, through: :passive_followings, source: :follower
   has_one_attached :avatar
 
   validates :username, presence: true, uniqueness: true
   validates :fullName, presence: true, uniqueness: true
   # after_commit :add_default_avatar, on: %i[create update]
+
+  def follow(user)
+    active_followers.create(folloed_id: user.id)
+  end
+
+  def unfollow(user)
+    active_followers.find_by(followed_id: user.id).destroy
+  end
+
+  def following?(user)
+    following.include?(user)
+  end
 
   def avatar_thumbnail
     if avatar.attached?
