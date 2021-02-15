@@ -7,6 +7,7 @@ body {
   overflow-x: hidden;
 }
 
+.stats2,
 .alert,
 .div-user,
 .edit,
@@ -176,7 +177,8 @@ small {
   width: 50%;
 }
 
-.tweet-show div {
+.tweet-show div,
+.stats2 {
   flex: 1;
 }
 

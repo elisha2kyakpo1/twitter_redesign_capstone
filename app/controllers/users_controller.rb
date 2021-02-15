@@ -10,7 +10,9 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @tweets = @user.tweets
+    @tweets = @user.tweets.order('created_at DESC')
+    @followers = @user.followers
+    @following = @user.following
   end
 
   def edit
@@ -45,34 +47,14 @@ class UsersController < ApplicationController
     redirect_to users_path
   end
 
-  def followers
-    @user = User.find(params[:user])
-    @followers = @user.followers(User)
-    @users = User.all
-
-    response = { user: @user, followers: @followers, users: @users }
-
-    respond_to do |format|
-      format.html
-      format.xml { render xml: response }
-    end
+  def create_follow
+    @user = User.find(params[:id])
+    @follower = current_user.follow(@user)
   end
 
-  def following
-    @user = User.find(params[:username])
-    @following = @user.followed(User)
-    @users = User.all
-
-    response = { user: @user, following: @following, users: @users }
-
-    respond_to do |format|
-      format.html # following.html.erb
-      format.xml { render xml: response }
-    end
-  end
-
-  def unfollow(following)
-    following.find_by(followed_id: followings.id).destroy
+  def destroy_friendship
+    @user = User.find(params[:id])
+    @follower = current_user.unfollow(@user)
   end
 
   private
