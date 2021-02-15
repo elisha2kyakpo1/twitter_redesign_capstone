@@ -6,7 +6,9 @@
     <%= form_for @user do |f| %>
         
       <div class="field">
-        <p><%= f.file_field :avatar %></p>
+        <p>
+          <%= f.file_field :avatar %>
+        </p>
         <%= f.text_field :username, autofocus: true, autocomplete: "username", placeholder: 'username', class: 'text' %><br>
         <%= f.text_field :fullName, autofocus: true, autocomplete: "fullname", placeholder: 'fullname', class: 'text' %>
       </div>

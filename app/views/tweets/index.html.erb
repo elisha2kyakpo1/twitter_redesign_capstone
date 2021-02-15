@@ -44,8 +44,6 @@
       <nav class = "navbar1">
         <% if current_user %>
           <h4><%= link_to 'Tweets', tweets_path, class: 'links' %></h4>
-          <h4><%= link_to 'Photos', class: 'links' %></h4>
-          <h4><%= link_to 'Videos', class: 'links' %></h4>
         <% end %>
       </nav>
         <hr class="mt-0">
@@ -65,7 +63,7 @@
           <div>
             <p id="notice"><%= notice %></p>
             <% @tweets.each do |tweet| %>
-              <div class="author-data">
+              <div class="author-data container-fluid ml-2">
                 <h4 class="author"><%= link_to tweet.author.username %></h4>
                 <p class="authored"><%= tweet.Text %></p>
                 <small><%= time_ago_in_words(tweet.created_at) %> ago </small>
@@ -84,14 +82,11 @@
         <h4 class="text-center pt-2">Who to follow</h4>
       </div>
         <hr class="mt-0">
-      <div class="container-fluid">
+      <div class="container-fluid ml-5">
         <% @users.each do |user| %>
           <% if user.followings %>
             <h5><%= user.username %></h5>
-            <%= button_to "follow", follow_users_path(@following), class: ""  %>
-          <% else %>
-            <h5><%= user.username %></h5>
-            <%= button_to "unfollow", unfollow_users_path(@user), class: "" %>
+            <p class="secondary">Followed by <%= link_to '@jamesking', class: 'followed_by' %></p>
           <% end %>
         <% end %>
       </div>

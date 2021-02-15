@@ -75,6 +75,16 @@ h4,
   margin-bottom: 15px;
 }
 
+small {
+  margin-left: auto;
+  color: #9ca3af;
+}
+
+.author-data small {
+  float: right;
+  clear: both;
+}
+
 .tweet-show,
 .create_tweet {
   background-color: #fff;
@@ -151,11 +161,6 @@ h4,
   cursor: pointer;
 }
 
-small {
-  margin-left: auto;
-  color: #9ca3af;
-}
-
 .post_div {
   border-radius: 5px;
   padding: 10px 20px;
@@ -191,6 +196,19 @@ label,
 
 .navbar1 h4 {
   padding-left: 8px;
+}
+
+.unfollow {
+  display: inline-block;
+  border: 1px solid #1da1f2;
+  color: #1da1f2;
+  border-radius: 5px;
+  padding: 5px 8px;
+}
+
+.unfollow:hover {
+  text-decoration: none;
+  color: #1da1f2;
 }
 
 .submit {
