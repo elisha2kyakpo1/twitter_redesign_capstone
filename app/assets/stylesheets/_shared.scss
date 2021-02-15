@@ -3,6 +3,8 @@ body {
   margin: 0;
   box-sizing: border-box;
   padding: 0;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 .alert,
@@ -11,8 +13,7 @@ body {
 .signin,
 .signup-page,
 .new_tweet,
-.create_tweet,
-.header {
+.create_tweet {
   display: flex;
   justify-content: center;
 }
@@ -49,7 +50,8 @@ h4,
 }
 
 .container-inner,
-.tweet-show {
+.tweet-show,
+.header {
   display: flex;
 }
 
@@ -67,7 +69,9 @@ h4,
 }
 
 .header {
-  padding-top: 25px;
+  justify-content: flex-end;
+  padding-bottom: 10px;
+  padding-top: 10px;
   background-color: #1da1f2;
 }
 
@@ -133,14 +137,6 @@ small {
   color: #1da1f2 !important;
   font-weight: 800;
   margin: 0;
-}
-
-.remenber {
-  display: inline;
-}
-
-.space {
-  margin: 15px 0;
 }
 
 .field1 {
@@ -225,10 +221,6 @@ label,
   width: 100%;
 }
 
-.sub {
-  padding: 5px 10px;
-}
-
 h2 {
   text-align: center;
   font-weight: 800;
@@ -242,21 +234,6 @@ h2 {
   margin: 10px 0;
   font-size: 18px;
   width: 300px;
-}
-
-.search {
-  margin-left: auto;
-  padding: 3px;
-}
-
-.sub_search {
-  font-size: 18px;
-  background-color: forestgreen;
-  border: none;
-  padding: 3px 5px;
-  cursor: pointer;
-  color: #fff;
-  border-radius: 0 3px 3px 0;
 }
 
 .title,
@@ -301,6 +278,15 @@ h2 {
   margin-left: auto;
 }
 
+.log_out_btn {
+  display: inline-block;
+  color: #fff;
+  border: 2px solid #fff;
+  padding: 3px 5px;
+  border-radius: 5px;
+  margin-right: 20px;
+}
+
 .log_out,
 .user,
 .log {
@@ -317,7 +303,8 @@ h2 {
   background-color: #1da1f2;
 }
 
-.log:hover {
+.log:hover,
+.log_out_btn:hover {
   color: #fff !important;
   text-decoration: none;
 }

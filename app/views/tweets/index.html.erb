@@ -1,12 +1,11 @@
 <section class="d-grid row">  
-      <%#= image_tag "image.jpg" %>
+      <%#= image_tag "default_avatar.jpg", class: 'img' %>
   <section class="sec2 container-fluid col-2">
-    <div class="logout">
-      <div class="profile d-flex mt-2">
-        <div>
+    <div class="logout container-fluid">
+      <div class="profile d-flex  mt-2">
+        <div class="">
           <% if current_user %>
-            <h5 class="user"><%= link_to current_user.username, class: 'user' %></h5>
-            <p><%= link_to 'Log Out', logout_path, method: :delete, class: 'log_out' %></p>
+            <h5 class="log"><%= link_to current_user.username, tweets_path, class: 'log' %></h5>
           <% end %>
         </div>
       </div>
@@ -34,8 +33,7 @@
   <section class="sec1 p-0 col-10">
     <header class="header">
       <% if current_user %>
-        <h4><%= current_user.username %></h4>
-        <p class ="para_log_out"><%= link_to 'Log Out', logout_path, method: :delete %></p>
+        <%= link_to 'Log Out', logout_path, class: 'log_out_btn', method: :delete %>
       <% end %>
     </header>
 
@@ -65,8 +63,8 @@
             <% @tweets.each do |tweet| %>
               <div class="author-data container-fluid ml-2">
                 <h4 class="author"><%= link_to tweet.author.username %></h4>
-                <p class="authored"><%= tweet.Text %></p>
                 <small><%= time_ago_in_words(tweet.created_at) %> ago </small>
+                <p class="authored"><%= tweet.Text %></p>
                 <%#= link_to 'Show', tweet %>
                 <%#= link_to 'Edit', edit_tweet_path(tweet) %>
                 <%#= link_to 'Destroy', tweet, method: :delete, data: { confirm: 'Are you sure?' } %>
