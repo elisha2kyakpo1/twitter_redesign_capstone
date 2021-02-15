@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   def index
     @users = User.order('created_at DESC')
+    @tweets = Tweet.all
   end
 
   def new
@@ -77,6 +78,6 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:username, :fullName, :avatar)
+    params.require(:user).permit(:username, :fullName)
   end
 end

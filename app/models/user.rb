@@ -6,7 +6,7 @@ class User < ApplicationRecord
 
   validates :username, presence: true, uniqueness: true
   validates :fullName, presence: true, uniqueness: true
-  after_commit :add_default_avatar, on: %i[create update]
+  # after_commit :add_default_avatar, on: %i[create update]
 
   def avatar_thumbnail
     if avatar.attached?

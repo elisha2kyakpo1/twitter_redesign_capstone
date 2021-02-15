@@ -48,6 +48,7 @@ ActiveRecord::Schema.define(version: 2021_02_14_184108) do
     t.datetime "updated_at", precision: 6, null: false
     t.integer "follower_id"
     t.integer "followed_id"
+    t.index ["follower_id", "followed_id"], name: "index_followings_on_follower_id_and_followed_id", unique: true
   end
 
   create_table "tweets", force: :cascade do |t|
