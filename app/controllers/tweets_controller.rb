@@ -1,6 +1,6 @@
 class TweetsController < ApplicationController
-  # before_action :require_login, only: %i[index]
-  # before_action :set_tweet, only: %i[show edit update destroy]
+  before_action :require_login, only: %i[index]
+  before_action :set_tweet, only: %i[show edit update destroy]
 
   def index
     @tweet = Tweet.new

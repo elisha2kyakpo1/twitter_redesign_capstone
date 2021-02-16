@@ -9,10 +9,11 @@ class User < ApplicationRecord
 
   validates :username, presence: true, uniqueness: true
   validates :fullName, presence: true, uniqueness: true
+
   # after_commit :add_default_avatar, on: %i[create update]
 
   def follow(user)
-    active_followers.create(folloed_id: user.id)
+    active_followers.create(follower_id: user.id)
   end
 
   def unfollow(user)

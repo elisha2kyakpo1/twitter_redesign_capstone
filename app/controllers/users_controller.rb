@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   def index
     @users = User.order('created_at DESC')
-    @tweets = Tweet.all
+    @tweets = Tweet.order('created_at DESC')
   end
 
   def new
@@ -47,14 +47,14 @@ class UsersController < ApplicationController
     redirect_to users_path
   end
 
-  def create_follow
-    @user = User.find(params[:id])
-    @follower = current_user.follow(@user)
+  def follow
+    # @user = User.find(params[:followed_id])
+    current_user.follow(@user)
   end
 
-  def destroy_friendship
-    @user = User.find(params[:id])
-    @follower = current_user.unfollow(@user)
+  def unfollow
+    # @user = User.find(params[:follower_id])
+    current_user.unfollow(@user)
   end
 
   private
