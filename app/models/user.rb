@@ -14,7 +14,7 @@ class User < ApplicationRecord
   # after_commit :add_default_avatar, on: %i[create update]
 
   def follow(user)
-    active_followers.build(followed_id: user.id)
+    active_followers.create(followed_id: user.id)
   end
 
   def unfollow(user)

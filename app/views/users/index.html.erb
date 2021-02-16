@@ -106,13 +106,15 @@
               <% @users.each do |user| %>
                   <div>
                     <div class="container-fluid">
+                    <% if current_user.id != user.id %>
                       <% if current_user.following?(user) %>
                         <h4 class="log_users"><%= link_to user.username.titleize, users_path, class: 'to_follow' %></h4>
                         <%= link_to 'unfollow', unfollow_user_user_path(user), method: :delete, class: 'unfollow' %>
                       <% else %>
                         <h4 class="log_users"><%= link_to user.username.titleize, users_path, class: 'to_follow' %></h4>
-                        <%= link_to 'follow', follow_user_user_path(user) %>
+                        <%= link_to 'follow', follow_user_user_path(user), class: 'unfollow' %>
                       <% end %>
+                    <% end %>
                     </div>
                   </div>
               <% end %>
