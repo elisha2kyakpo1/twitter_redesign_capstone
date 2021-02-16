@@ -4,7 +4,7 @@
       <div class="profile d-flex mt-2">
         <div>
           <% if current_user %>
-            <%= image_tag "default_avatar.jpg" %>
+            <div class="image"><%#= image_tag "default_avatar.jpg" %></div>
             <h5 class="log"><%= link_to current_user.username, users_path, class: 'log' %></h5>
           <% end %>
         </div>
