@@ -12,8 +12,8 @@ module UsersHelper
   end
 
   def avatar_thumbnail
-    if avatar.attached?
-      avatar.variant(resize: '50x50!').processed
+    if photo
+      photo.variant(resize: '50x50!').processed
     else
       '/default_avatar.jpg'
     end

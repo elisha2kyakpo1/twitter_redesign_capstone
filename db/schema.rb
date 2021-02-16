@@ -63,8 +63,8 @@ ActiveRecord::Schema.define(version: 2021_02_14_184108) do
     t.string "fullName"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "Photo"
-    t.string "CoverImage"
+    t.binary "photo"
+    t.binary "cover_image"
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"

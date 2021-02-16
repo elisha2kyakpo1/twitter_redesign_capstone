@@ -4,7 +4,7 @@
       <div class="profile d-flex mt-2">
         <div>
           <% if current_user %>
-            <div class="image"><%#= image_tag "default_avatar.jpg" %></div>
+            <%= image_tag(current_user.Photo) %>
             <h5 class="log"><%= link_to current_user.username, users_path, class: 'log' %></h5>
           <% end %>
         </div>
@@ -41,6 +41,10 @@
 
     <section class="container-inner d-flex">
       <section class="tweets-container">
+        <div>
+          <%#= image_tag(@user.CoverImage) %>
+        </div>
+
         <nav class = "navbar1">
           <% if current_user %>
             <h4><%= link_to 'Tweets', tweets_path(@tweets), class: 'links' %></h4>
