@@ -6,14 +6,15 @@ class User < ApplicationRecord
   has_many :following, through: :active_followers, source: :followed
   has_many :followers, through: :passive_followings, source: :follower
   has_one_attached :avatar
+  has_one_attached :coverimage
 
-  validates :username, presence: true, uniqueness: true
-  validates :fullName, presence: true, uniqueness: true
+  validates :username, presence: true, uniqueness: true, length: { maximum: 20 }
+  validates :fullName, presence: true, uniqueness: true, length: { maximum: 50 }
 
   # after_commit :add_default_avatar, on: %i[create update]
 
   def follow(user)
-    active_followers.create(followed_id: user.id)
+    active_followers.build(followed_id: user.id)
   end
 
   def unfollow(user)

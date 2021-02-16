@@ -2,12 +2,9 @@ Rails.application.routes.draw do
   resources :sessions
   delete 'logout' => 'sessions#destroy'
   resources :users do
-    get 'show/:id' => 'user#show'
-    collection do
-      get 'follow'
-      get 'unfollow'
-      get 'followers'
-      get 'following'
+    member do
+      get 'follow_user'
+      delete 'unfollow_user' => 'users#unfollow_user'
     end
   end
   resources :tweets

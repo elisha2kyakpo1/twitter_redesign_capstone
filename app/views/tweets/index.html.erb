@@ -13,11 +13,11 @@
       <div class="d-flex follow container-fluid">
         <% if current_user %>
         <div>
-          <div class="stats1"><%= link_to current_user.following.count, following_users_path %></div>
+          <div class="stats1"><%= link_to current_user.following.count %></div>
           <p class="log_out mr-2">following</p>
         </div>
         <div>
-          <div class="stats1"><%= link_to current_user.followers.count, followers_users_path %></div>
+          <div class="stats1"><%= link_to current_user.followers.count %></div>
           <div><p class="log_out">followers</p></div>
         </div>
         <% end %>

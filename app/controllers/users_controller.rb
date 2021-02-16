@@ -11,8 +11,8 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @tweets = @user.tweets.order('created_at DESC')
-    @followers = @user.followers
-    @following = @user.following
+    # @followers = Following.find(follower_id: @user.id)
+    # @following = Following.find(followed_id: @user.id)
   end
 
   def edit
@@ -47,14 +47,16 @@ class UsersController < ApplicationController
     redirect_to users_path
   end
 
-  def follow
-    # @user = User.find(params[:followed_id])
+  def follow_user
+    @user = User.find(params[:id])
     current_user.follow(@user)
+    redirect_to users_path
   end
 
-  def unfollow
-    # @user = User.find(params[:follower_id])
+  def unfollow_user
+    @user = User.find(params[:id])
     current_user.unfollow(@user)
+    redirect_to users_path
   end
 
   private
