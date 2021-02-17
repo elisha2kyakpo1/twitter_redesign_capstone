@@ -2,7 +2,7 @@
 
 ## About
 
-In this project, I build an application named twitter_redesign which is a capston project, and that works similar to twitter. The main goal is to put in practice the main concepts of rails MVC.The app allows users to create tweets and then manage user signups. Users can create tweets and send follow or unfollow other users.A user is able to see how many users follow him/her and can see the total number of users he/she follows.
+In this project, I build an application named twitter_redesign which is a capstone project, and that works similar to twitter. The main goal is to put in practice the main concepts of rails MVC.The app allows users to create tweets and then manage user signups. Users can create tweets and follow or unfollow other users. A user is able to see how many users follow him/her and can see the total number of users he/she follows.
 
 A user can create many tweets. A user can follow many users and a user can have many follows. For this, many-to-many model relationships is implemented.
 
@@ -18,7 +18,7 @@ A follower/followed is a user, therefore, a self join relationship is created be
 
 ## Getting Started
 
-Enjoying app features by openning the link below in the blowser.
+Enjoy app features by openning the link below in the blowser.
 
 ### Have a copy
 
