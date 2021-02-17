@@ -13,17 +13,6 @@ local:
 #   secret_access_key: <%= Rails.application.credentials.dig(:aws, :secret_access_key) %>
 #   region: us-east-1
 #   bucket: your_own_bucket
-amazon:
-  service: S3
-  access_key_id: ""
-  secret_access_key: ""
-  region: ""
-  bucket: ""
-  http_open_timeout: 0
-  http_read_timeout: 0
-  retry_limit: 0
-  upload:
-    server_side_encryption: "" 
 
 # Remember not to checkin your GCS keyfile to a repository
 # google:

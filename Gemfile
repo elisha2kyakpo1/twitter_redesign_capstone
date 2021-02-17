@@ -2,7 +2,8 @@ source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.7.1'
-
+gem 'shrine', '~> 3.3'
+gem 'shrine-cloudinary', '~> 1.1'
 # bootstrap
 gem 'bootstrap', '~> 4.6'
 gem 'jquery-rails', '~> 4.4'
@@ -24,9 +25,8 @@ gem 'jbuilder', '~> 2.7'
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
-gem 'cancancan', '~> 3.2', '>= 3.2.1'
 
-gem 'aws-sdk-s3', require: false
+# gem 'aws-sdk-s3', require: false
 # Use Active Storage variant
 gem 'image_processing', '~> 1.2'
 
@@ -36,6 +36,7 @@ gem 'bootsnap', '>= 1.4.4', require: false
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
+  gem 'dotenv-rails'
   gem 'rspec-rails', '~> 4.0.2'
 end
 
