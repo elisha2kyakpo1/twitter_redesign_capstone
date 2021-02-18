@@ -20,11 +20,15 @@ A follower/followed is a user, therefore, a self join relationship is created be
 
 Enjoy app features by openning the link below in the blowser.
 
+> Please take note that I have not included the live link  yet due to deployment errors I'm getting from heroku, once done I will share the link.
+
 ### Have a copy
 
 Here is a short video to take you through the app.
 
 Note: the video only shows the screen due to camera driver not working on my laptop.
+
+[Getting started Viddeo](https://www.loom.com/share/c889b03d72b5475db8e4d0c87b00e61a)
 
 To get started, you should first get this file in your local machine by cloning or forking this project or typing in your terminal
 
