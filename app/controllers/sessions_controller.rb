@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
     end
   end
 
-  def destroy
+  def logout_user
     session[:author_id] = nil
     redirect_to root_path, notice: 'Logged out succussfully!'
   end

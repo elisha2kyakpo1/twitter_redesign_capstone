@@ -1,10 +1,11 @@
 Rails.application.routes.draw do
-  resources :sessions
-  delete 'logout' => 'sessions#destroy'
+  resources :sessions, only: %i[new create logout_user]
+    get 'logout', to: 'sessions#logout_user'
+
   resources :users do
     member do
       get 'follow_user'
-      delete 'unfollow_user' => 'users#unfollow_user'
+      get 'unfollow_user' => 'users#unfollow_user'
     end
   end
   resources :tweets
