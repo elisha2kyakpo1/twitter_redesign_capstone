@@ -26,7 +26,7 @@ Here is a short video to take you through the app.
 
 Note: the video only shows the screen due to camera driver not working on my laptop.
 
-[Getting started Viddeo]()
+[Getting started Viddeo](https://www.loom.com/share/c889b03d72b5475db8e4d0c87b00e61a)
 
 To get started, you should first get this file in your local machine by cloning or forking this project or typing in your terminal
 
