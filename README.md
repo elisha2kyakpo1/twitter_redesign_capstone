@@ -26,6 +26,8 @@ Here is a short video to take you through the app.
 
 Note: the video only shows the screen due to camera driver not working on my laptop.
 
+[Getting started Viddeo]()
+
 To get started, you should first get this file in your local machine by cloning or forking this project or typing in your terminal
 
 git clone https://github.com/elisha2kyakpo1/twitter_redesign_capstone.git
