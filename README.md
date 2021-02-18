@@ -20,6 +20,8 @@ A follower/followed is a user, therefore, a self join relationship is created be
 
 Enjoy app features by openning the link below in the blowser.
 
+> Please take note that I have not included the live link  yet due to deployment errors I'm getting from heroku, once done I will share the link.
+
 ### Have a copy
 
 Here is a short video to take you through the app.
