@@ -3,7 +3,7 @@
     <div class="form">
       <%= form_for Tweet.new do |form| %>
           <%= form.label :Tweet_Something %><br>
-          <%= form.text_area :Text, class: 'tweet',cols: 60, placeholder: 'Compose new tweet' %>
+          <%= form.text_area :text, class: 'tweet',cols: 60, placeholder: 'Compose new tweet' %>
         <div class="actions">
           <%= form.submit 'Tweet', class: 'submit' %>
         </div>

@@ -10,7 +10,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @tweets = @user.tweets.order('created_at DESC')
+    @tweet = @user.tweets.order('created_at DESC')
   end
 
   def edit
@@ -60,6 +60,6 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:username, :fullName, :photo, :cover_image)
+    params.require(:user).permit(:username, :full_name, :photo, :cover_image)
   end
 end

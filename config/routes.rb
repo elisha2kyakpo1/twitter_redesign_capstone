@@ -4,11 +4,14 @@ Rails.application.routes.draw do
 
   resources :users do
     member do
-      get 'follow_user'
-      get 'unfollow_user' => 'users#unfollow_user'
+      get '/follow/', to: 'users#follow_user'
+      get '/unfollow/', to: 'users#unfollow_user'
     end
   end
-  resources :tweets
+  resources :tweets, only: %i[index new create show]
+  get '/tweets', to: 'tweets#index'
+  get '/tweets/new', to: 'tweets#new'
+  get '/tweets/:id', to: 'tweets#show'
   root to: 'tweets#index'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

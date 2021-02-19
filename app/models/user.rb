@@ -10,8 +10,8 @@ class User < ApplicationRecord
   has_one_attached :coverimage
   # include ImageUploader::Attachment(:photo, :cover_image)
 
-  validates :username, presence: true, uniqueness: true, length: { maximum: 20 }
-  validates :fullName, presence: true, uniqueness: true, length: { maximum: 50 }
+  validates :username, presence: true, uniqueness: true, length: { minimum: 3, maximum: 20 }
+  validates :full_name, presence: true, length: { minimum: 4, maximum: 50 }
 
   # after_commit :add_default_avatar, on: %i[create update]
 end
