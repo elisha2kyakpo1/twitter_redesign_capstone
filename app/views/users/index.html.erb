@@ -80,8 +80,7 @@
 
       <article class="articles p-0 col-4">
         <div class="articles_inner">
-          <h5 class="log"><%= link_to current_user.full_name, users_path, class: 'log2' %></h5>
-          <h6 class="log">@<%= link_to current_user.username, users_path, class: 'log1' %></h6>
+          <%#= render "show" user: @user %>
         </div>
           <hr class="mb-0">
         <div class="stats_div d-flex">
@@ -112,10 +111,10 @@
                     <div class="container-fluid">
                     <% if current_user.id != user.id %>
                       <% if current_user.following?(user) %>
-                        <h4 class="log_users"><%= link_to user.username.titleize, user_path(user), class: 'to_follow' %></h4>
+                        <h4 class="log_users"><%= link_to user.username.titleize, users_path(user), class: 'to_follow' %></h4>
                         <%= link_to 'unfollow', unfollow_user_path(user), method: :delete, class: 'unfollow' %>
                       <% else %>
-                        <h4 class="log_users"><%= link_to user.username.titleize, user_path(user), class: 'to_follow' %></h4>
+                        <h4 class="log_users"><%= link_to user.username.titleize, users_path(user), class: 'to_follow' %></h4>
                         <%= link_to 'follow', follow_user_path(user), class: 'unfollow' %>
                       <% end %>
                     <% end %>

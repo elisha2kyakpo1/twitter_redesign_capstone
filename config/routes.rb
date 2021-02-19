@@ -3,6 +3,9 @@ Rails.application.routes.draw do
     get 'logout', to: 'sessions#logout_user'
 
   resources :users do
+    post '/users/:id', to: 'users#index'
+    put '/users/:id', to: 'users#create'
+    get '/users/:id', to: 'users#show'
     member do
       get '/follow/', to: 'users#follow_user'
       get '/unfollow/', to: 'users#unfollow_user'

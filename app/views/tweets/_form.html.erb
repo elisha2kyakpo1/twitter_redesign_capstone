@@ -1,7 +1,7 @@
 <div class="create_tweet">
   <div class="container-fluid d-flex tweet_create flex-1">
     <div class="form">
-      <%= form_for Tweet.new do |form| %>
+      <%= form_for @tweet do |form| %>
           <%= form.label :Tweet_Something %><br>
           <%= form.text_area :text, class: 'tweet',cols: 60, placeholder: 'Compose new tweet' %>
         <div class="actions">
