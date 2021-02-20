@@ -54,6 +54,10 @@ label,
   padding: 0 !important;
 }
 
+footer {
+  color: #343a40;
+}
+
 .container-inner,
 .tweet-show,
 .header {
@@ -74,6 +78,7 @@ label,
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
 }
 
 .stats_div {
@@ -86,6 +91,9 @@ label,
 }
 
 .header {
+  top: 0;
+  margin-left: 13.2%;
+  z-index: 1;
   padding-bottom: 10px;
   padding-top: 10px;
   background-color: #1da1f2;

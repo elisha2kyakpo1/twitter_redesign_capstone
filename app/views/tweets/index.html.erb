@@ -1,6 +1,6 @@
 <section class="">  
    <section class="sec1 p-0">
-    <header class="header">
+    <header class="header position-sticky">
       <% if current_user %>
         <%= link_to 'Log Out', logout_path(session), class: 'log_out_btn', method: :delete %>
       <% end %>
@@ -31,9 +31,11 @@
               <p id="notice"><%= notice %></p>
               <% @tweets.each do |tweet| %>
                 <div class="author-data container-fluid ml-2">
-                  <h4 class="log_user"><%= link_to tweet.author.username.titleize, users_path(@user), class: 'user_name' %></h4>
-                  <small><%= time_ago_in_words(tweet.created_at) %> ago </small>
-                  <p class="authored"><%= tweet.text %></p>
+                  <% if current_user || current_user.following?(tweet.author) %>
+                    <h4 class="log_user"><%= link_to tweet.author.username.titleize, users_path(@user), class: 'user_name' %></h4>
+                    <small><%= time_ago_in_words(tweet.created_at) %> ago </small>
+                    <p class="authored"><%= tweet.text %></p>
+                  <% end %>
                 </div>
               <% end %>
             </div>
@@ -48,10 +50,10 @@
           <hr class="mt-0">
         <div class="container-fluid ml-5">
           <% @users.each do |user| %>
-            <% if current_user != user && current_user != user.following %>
+            <% if current_user != user && !current_user.following?(user) %>
                 <h4 class="log_users"><%= link_to user.username.titleize, users_path(user), class: 'to_follow' %></h4>
+                 <%= link_to 'follow', follow_user_path(user), class: 'unfollow' %>
                 <p class="secondary">Followed by <%= link_to '@jamesking', class: 'followed_by' %></p>
-              <%# end %>
             <% end %>
           <% end %>
         </div>

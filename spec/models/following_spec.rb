@@ -11,9 +11,9 @@ RSpec.describe Following, type: :model do
   end
 
   describe 'validations' do
-    it { is_expected.to validate_presence_of(:follower) }
-    it { is_expected.to validate_presence_of(:followed) }
-    # it { is_expected.to validate_uniqueness_of(:followed).scoped_to(:follower_id) }
+    it { is_expected.to belong_to(:follower) }
+    it { is_expected.to belong_to(:followed) }
+    it { is_expected.to validate_uniqueness_of(:follower).scoped_to(:followed_id) }
 
     it 'is valid with valid attribute' do
       expect(subject).to be_valid
@@ -51,10 +51,10 @@ RSpec.describe Following, type: :model do
         expect(f1).to be_valid
       end
       it '' do
-        expect(f1.follower = u1).to be_valid
+        expect(f1.follower = u2).to be_valid
       end
       it '' do
-        expect(f1.followed = u2).to be_valid
+        expect(f1.followed = u1).to be_valid
       end
     end
   end
