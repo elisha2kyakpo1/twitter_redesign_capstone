@@ -1,5 +1,6 @@
-RSpec.describe Tweet do
-  let(:user) { User.create(id: 2, username: 'elisha', fullname: 'user fullname') }
+require 'rails_helper'
+RSpec.describe Tweet, type: :model do
+  let(:user) { User.create(id: 2, username: 'elisha', full_name: 'user fullname') }
 
   let(:subject) do
     described_class.new(

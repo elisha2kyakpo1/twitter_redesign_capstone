@@ -1,6 +1,6 @@
 module UsersHelper
   def follow(user)
-    active_followers.create(followed_id: user.id)
+    active_followers.build(followed_id: user.id)
   end
 
   def unfollow(user)

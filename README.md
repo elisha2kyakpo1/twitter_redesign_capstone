@@ -55,16 +55,22 @@ After that do bundle install to install all required gems and dependences
 
 > bundle install
 
-Lastly, install yarn by running the command below
+Install yarn by running the command below
 > yarn install
 
-Database migration
+Since we are using postgresql database, run this command in your tenimal to create the database
 
+> rails db:create
+
+Finally, run the migration to populate your database to have the tables
 > rails db:migrate
 
 You then interract with the program from rails server on the web by
 
 > rails s
+
+Open your favourite blowser and type the command below
+> http://localhost:3000
 
 ## Contributors
 

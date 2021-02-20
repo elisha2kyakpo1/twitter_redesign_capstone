@@ -1,14 +1,15 @@
+require 'rails_helper.rb'
 RSpec.describe User do
   let(:subject) do
     described_class.new(
       username: 'myusername',
-      fullname: 'myuser fullname'
+      full_name: 'myuser fullname'
     )
   end
 
   describe 'validations' do
     it { is_expected.to validate_presence_of(:username) }
-    it { is_expected.to validate_presence_of(:fullname) }
+    it { is_expected.to validate_presence_of(:full_name) }
 
     it 'is valid with valid attribute' do
       expect(subject).to be_valid
@@ -24,20 +25,20 @@ RSpec.describe User do
       expect(subject).not_to be_valid
     end
 
-    it 'The full name should exist' do
-      subject.fullname = ''
+    it 'The full_name should exist' do
+      subject.full_name = ''
       expect(subject).not_to be_valid
     end
 
-    it 'The fullname should not be longer than 30 characters' do
-      subject.fullname = 'kwehjkwehfkjewhfewhfkdhfkdhfkdhfkdjfkldjfkljflkwjflwdjflkdjfkldjfklsdf'
+    it 'The full_name should not be longer than 50 characters' do
+      subject.full_name = 'kwehjkwehfkjewhfewhfkdhfkdhfkdhfkdjfkldjfkljflkwjflwdjflkdjfkldjfklsdf'
       expect(subject).not_to be_valid
     end
   end
 
   describe 'Associations', type: :model do
-    it { is_expected.to have_many(:opinions) }
-    it { is_expected.to have_many(:followings) }
+    it { is_expected.to have_many(:tweets) }
+    it { is_expected.to have_many(:following) }
     it { is_expected.to have_many(:followers) }
   end
 end

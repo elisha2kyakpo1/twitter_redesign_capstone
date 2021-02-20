@@ -47,7 +47,7 @@ class UsersController < ApplicationController
 
   def follow_user
     @user = User.find(params[:id])
-    current_user.follow(@user)
+    current_user.follow(@user).save
     redirect_to users_path
   end
 
