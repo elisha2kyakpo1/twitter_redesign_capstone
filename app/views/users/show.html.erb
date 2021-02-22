@@ -9,7 +9,9 @@
     <section class="container-inner d-flex">
       <section class="tweets-container">
         <div>
-          <%#= image_tag(@user.Cover_mage) %>
+          <% if @user.cover_image %>
+          <%= link_to @user.cover_mage, user_path(@user) %>
+          <% end %>
         </div>
 
         <nav class = "navbar1 d-flex ml-2">
