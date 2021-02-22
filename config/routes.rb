@@ -6,16 +6,11 @@ Rails.application.routes.draw do
     post '/users/:id', to: 'users#index'
     put '/users/:id', to: 'users#create'
     get '/users/:id', to: 'users#show'
-    # member do
-    #   get '/follow/', to: 'users#follow_user'
-    #   get '/unfollow/', to: 'users#unfollow_user'
-    # end
+    member do
+      get '/follow/', to: 'users#follow_user'
+      get '/unfollow/', to: 'users#unfollow_user'
+    end
   end
-
-  resources :followers, only: %i[index follow_user unfollow_user]
-  get '/follow/', to: 'followings#follow'
-  get '/unfollow/', to: 'followings#unfollow'
-
   resources :tweets, only: %i[index new create show]
   get '/tweets', to: 'tweets#index'
   get '/tweets/new', to: 'tweets#new'

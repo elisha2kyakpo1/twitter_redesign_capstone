@@ -15,7 +15,8 @@ class UsersController < ApplicationController
     @user_tweets = @user.tweets.includes(:author).order('created_at DESC')
     @followers = @user.followers
     @followings = @user.followeds
-    @current_user_followings = current_user.followeds
+    @user_followed_by = @user.followers
+    @user_followers = @user.followeds
   end
 
   def edit
@@ -48,6 +49,18 @@ class UsersController < ApplicationController
     @user.destroy
 
     redirect_to users_path
+  end
+
+  def follow_user
+    @user = User.find(params[:id])
+    current_user.follow(@user).save
+    redirect_to user_path
+  end
+
+  def unfollow_user
+    @user = User.find(params[:id])
+    current_user.unfollow(@user)
+    redirect_to user_path
   end
 
   private

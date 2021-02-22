@@ -321,9 +321,16 @@ h2 {
   margin-right: 25px;
 }
 
+a span,
 .log_user,
 .log2 {
-  color: #343a40 !important;
+  color: #9ca3af !important;
+}
+
+a span {
+  font-size: 18px;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-left: 5px;
 }
 
 .log_out,

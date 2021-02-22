@@ -1,14 +1,14 @@
 module UsersHelper
   def follow(user)
-    active_followers.build(followed_id: user.id)
+    active_followings.build(followed_id: user.id)
   end
 
   def unfollow(user)
-    active_followers.find_by(followed_id: user.id).destroy
+    active_followings.find_by(followed_id: user.id).destroy
   end
 
   def following?(user)
-    following.include?(user)
+    followeds.include?(user)
   end
 
   def avatar_thumbnail
