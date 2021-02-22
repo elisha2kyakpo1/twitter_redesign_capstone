@@ -89,7 +89,7 @@
             <hr class="mb-0">
             <div class="container-fluid">
               <% @user_followed_by.each do |follower| %>
-                <h4><%= link_to follower.full_name.titleize, user_path(@user), class: 'to_follow' %><h4>
+                <h4><%= link_to follower.full_name.titleize, user_path(follower), class: 'to_follow' %><h4>
               <% end %>
             </div>
           </div>          
