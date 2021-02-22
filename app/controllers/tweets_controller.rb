@@ -6,6 +6,8 @@ class TweetsController < ApplicationController
     @tweet = Tweet.new
     @tweets = Tweet.order('created_at DESC')
     @users = User.order('created_at DESC')
+    @tofollow_users = User.all_except(current_user) - @current_user.followeds
+    @current_user_followings = current_user.followeds
   end
 
   def show
