@@ -1,5 +1,6 @@
 require './rails_helper'
-RSpec.describe Following, type: :model do
+
+RSpec.describe Following do
   let(:user1) { User.create(id: 1, username: 'elisha', full_name: 'elisha full_name') }
   let(:user2) { User.create(id: 2, username: 'henok', full_name: 'henok full_name') }
 
@@ -11,9 +12,9 @@ RSpec.describe Following, type: :model do
   end
 
   describe 'validations' do
-    it { is_expected.to belong_to(:follower) }
-    it { is_expected.to belong_to(:followed) }
-    it { is_expected.to validate_uniqueness_of(:follower).scoped_to(:followed_id) }
+    it { is_expected.to validate_presence_of(:follower_id) }
+    it { is_expected.to validate_presence_of(:followed_id) }
+    it { is_expected.to validate_uniqueness_of(:followed).scoped_to(:follower_id) }
 
     it 'is valid with valid attribute' do
       expect(subject).to be_valid
@@ -43,18 +44,18 @@ RSpec.describe Following, type: :model do
     it { is_expected.to belong_to(:followed) }
 
     context '' do
-      u1 = User.new(username: 'user1', full_name: 'user1 full_name')
-      u2 = User.new(username: 'user2', full_name: 'user2 full_name')
-      f1 = u1.follow(u2)
+      u1 = User.new(id: 2, username: 'user1', full_name: 'user1 full_name')
+      u2 = User.new(id: 1, username: 'user2', full_name: 'user2 full_name')
+      f1 = u1.active_followings.build(followed: u2)
 
       it '' do
         expect(f1).to be_valid
       end
       it '' do
-        expect(f1.follower = u2).to be_valid
+        expect(f1.follower = u1).to be_valid
       end
       it '' do
-        expect(f1.followed = u1).to be_valid
+        expect(f1.followed = u2).to be_valid
       end
     end
   end

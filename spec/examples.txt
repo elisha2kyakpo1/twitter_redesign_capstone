@@ -1,18 +1,18 @@
 example_id                               | status | run_time        |
 ---------------------------------------- | ------ | --------------- |
-./spec/models/following_spec.rb[1:1:1]   | passed | 0.0251 seconds  |
-./spec/models/following_spec.rb[1:1:2]   | passed | 0.03066 seconds |
-./spec/models/following_spec.rb[1:1:3]   | failed | 0.01802 seconds |
-./spec/models/following_spec.rb[1:1:4]   | passed | 0.02669 seconds |
-./spec/models/following_spec.rb[1:1:5]   | passed | 0.02919 seconds |
-./spec/models/following_spec.rb[1:1:6]   | passed | 0.02297 seconds |
-./spec/models/following_spec.rb[1:1:7]   | passed | 0.0217 seconds  |
-./spec/models/following_spec.rb[1:1:8]   | passed | 0.01535 seconds |
-./spec/models/following_spec.rb[1:2:1]   | passed | 0.01898 seconds |
-./spec/models/following_spec.rb[1:2:2]   | passed | 0.04667 seconds |
-./spec/models/following_spec.rb[1:2:3:1] | failed | 0.00774 seconds |
-./spec/models/following_spec.rb[1:2:3:2] | passed | 0.01022 seconds |
-./spec/models/following_spec.rb[1:2:3:3] | failed | 0.01482 seconds |
+./spec/models/following_spec.rb[1:1:1]   | passed | 0.05733 seconds |
+./spec/models/following_spec.rb[1:1:2]   | passed | 0.02347 seconds |
+./spec/models/following_spec.rb[1:1:3]   | passed | 0.12639 seconds |
+./spec/models/following_spec.rb[1:1:4]   | passed | 0.03441 seconds |
+./spec/models/following_spec.rb[1:1:5]   | passed | 0.0202 seconds  |
+./spec/models/following_spec.rb[1:1:6]   | passed | 0.0116 seconds  |
+./spec/models/following_spec.rb[1:1:7]   | passed | 0.04051 seconds |
+./spec/models/following_spec.rb[1:1:8]   | passed | 0.03473 seconds |
+./spec/models/following_spec.rb[1:2:1]   | passed | 0.05655 seconds |
+./spec/models/following_spec.rb[1:2:2]   | passed | 0.01402 seconds |
+./spec/models/following_spec.rb[1:2:3:1] | passed | 0.00407 seconds |
+./spec/models/following_spec.rb[1:2:3:2] | passed | 0.00495 seconds |
+./spec/models/following_spec.rb[1:2:3:3] | passed | 0.00328 seconds |
 ./spec/models/tweets_spec.rb[1:1:1]      | passed | 0.02329 seconds |
 ./spec/models/tweets_spec.rb[1:1:2]      | passed | 0.017 seconds   |
 ./spec/models/tweets_spec.rb[1:1:3]      | passed | 0.00881 seconds |
