@@ -12,9 +12,9 @@ Rails.application.routes.draw do
     end
   end
   resources :tweets, only: %i[index new create show]
-  get '/tweets', to: 'tweets#index'
-  get '/tweets/new', to: 'tweets#new'
-  get '/tweets/:id', to: 'tweets#show'
+    resources :votes, only: %i[vote unvote]
+    get 'unvote', to: 'votes#vote' 
+    get 'unvote', to: 'votes#unvote' 
   root to: 'tweets#index'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

@@ -35,6 +35,8 @@
                     <h4 class="log_user"><%= link_to tweet.author.username.titleize, user_path(tweet.author), class: 'user_name' %></h4>
                     <small><%= time_ago_in_words(tweet.created_at) %> ago </small>
                     <p class="authored"><%= tweet.text %></p>
+                    <%= vote_or_unvote_btn(tweet)  %>
+                    <%= 'Vote(s)' %><%= tweet.votes.count %> 
                   <% end %>
                 </div>
               <% end %>

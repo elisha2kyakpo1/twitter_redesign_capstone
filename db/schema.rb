@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_14_184108) do
+ActiveRecord::Schema.define(version: 2021_02_23_085413) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -67,9 +67,18 @@ ActiveRecord::Schema.define(version: 2021_02_14_184108) do
     t.text "cover_image"
   end
 
+  create_table "votes", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "voter_id"
+    t.integer "tweet_id"
+  end
+
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "followings", "users", column: "followed_id"
   add_foreign_key "followings", "users", column: "follower_id"
   add_foreign_key "tweets", "users", column: "author_id"
+  add_foreign_key "votes", "tweets"
+  add_foreign_key "votes", "users", column: "voter_id"
 end
