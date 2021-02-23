@@ -30,3 +30,4 @@ example_id                               | status | run_time        |
 ./spec/models/user_spec.rb[1:2:1]        | passed | 0.00739 seconds |
 ./spec/models/user_spec.rb[1:2:2]        | passed | 0.00201 seconds |
 ./spec/models/user_spec.rb[1:2:3]        | passed | 0.06834 seconds |
+./spec/models/vote_spec.rb[1:1:1]        | passed | 0.1094 seconds  |
