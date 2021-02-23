@@ -10,21 +10,18 @@
       <section class="tweets-container">
         <div>
           <% if @user.cover_image %>
-          <%#= link_to image_tag(@user.cover_image), user_path(@user) %>
+          <%= link_to image_tag(@user.cover_image), user_path(@user) %>
           <%= @user.cover_image %>
           <% end %>
         </div>
 
         <nav class = "navbar1 d-flex ml-2">
           <% if current_user %>
-              <a href="<%= root_path %>">  
-                <span id="view-opinions" class="menu-title font-fam">tweets</span>
+              <a href="<%= user_path(@user) %>">  
+                <span id="user_tweets" class="menu-title font-fam">tweets</span>
               </a> 
               <a href="<%= user_path(@user) %>">  
-                <span id="view-opinions" class="menu-title font-fam">following</span>
-              </a> 
-              <a href="<%= user_path(@user) %>">  
-                <span id="view-opinions" class="menu-title font-fam">followers</span>
+                <span id="people_you_follow" class="menu-title font-fam">following</span>
               </a> 
           <% end %>
         </nav>
@@ -92,8 +89,8 @@
             <h4 class="text-center pt-2">Followed by</h4>
             <hr class="mb-0">
             <div class="container-fluid">
-              <% @user_followed_by.each do |follower| %>
-                <h4><%= link_to follower.full_name.titleize, user_path(follower), class: 'to_follow' %><h4>
+              <% @user_followed_by.each do |follow| %>
+                <h4><%= link_to follow.full_name.titleize, user_path(follow), class: 'to_follow' %><h4>
               <% end %>
             </div>
           </div>          
