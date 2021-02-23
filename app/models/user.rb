@@ -3,7 +3,7 @@ class User < ApplicationRecord
   has_many :tweets, foreign_key: :author_id, dependent: :destroy
   has_many :active_followings, class_name: 'Following', foreign_key: 'follower_id'
   has_many :passive_followings, class_name: 'Following', foreign_key: 'followed_id'
-  has_many :votes, dependent: :destroy
+  has_many :votes, dependent: :destroy, foreign_key: :voter_id
 
   has_many :followeds, through: :active_followings, foreign_key: 'followed_id'
   has_many :followers, through: :passive_followings, foreign_key: 'follower_id'

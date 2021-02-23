@@ -1,21 +1,21 @@
 class VotesController < ApplicationController
   def vote
-    @like = current_user.likes.new(tweet_id: params[:tweet_id])
+    @vote = current_user.votes.new(tweet_id: params[:tweet_id])
 
-    if @like.save
-      redirect_to @tweet, notice: 'You liked a tweet.'
+    if @vote.save
+      redirect_to root_path, notice: 'You voted a tweet.'
     else
-      redirect_to root_path, alert: 'You cannot like this tweet.'
+      redirect_to root_path, alert: 'You cannot vote this tweet.'
     end
   end
 
   def unvote
-    like = Like.find_by(id: params[:id], user: current_user, tweet_id: params[:tweet_id])
-    if like
-      like.destroy
-      redirect_to @tweet, notice: 'You disliked a tweet.'
+    vote = Vote.find_by(id: params[:id], voter: current_user, tweet_id: params[:tweet_id])
+    if vote
+      vote.destroy
+      redirect_to root_path, notice: 'You disvoted a tweet.'
     else
-      redirect_to @tweet_path, alert: 'You cannot dislike twwet that you did not like before.'
+      redirect_to root_path, alert: 'You cannot disvote twwet that you did not vote before.'
     end
   end
 end

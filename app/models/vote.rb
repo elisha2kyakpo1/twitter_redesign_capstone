@@ -1,5 +1,5 @@
 class Vote < ApplicationRecord
-  validates :user_id, uniqueness: { scope: :post_id }
+  validates :voter_id, uniqueness: { scope: :tweet_id }
 
   belongs_to :voter, class_name: 'User'
   belongs_to :tweet
