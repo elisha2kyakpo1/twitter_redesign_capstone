@@ -10,8 +10,7 @@
       <section class="tweets-container">
         <div>
           <% if @user.cover_image %>
-          <%= link_to image_tag(@user.cover_image), user_path(@user) %>
-          <%= @user.cover_image %>
+            <img class="cover_image" src = "<%= @user.cover_image %>" alt="Cover image">
           <% end %>
         </div>
 
