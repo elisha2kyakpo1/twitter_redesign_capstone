@@ -1,7 +1,4 @@
 class ApplicationController < ActionController::Base
-  # @followeds = current_user.followeds
-  # @followers = current_user.followers
-
   private
 
   def require_login

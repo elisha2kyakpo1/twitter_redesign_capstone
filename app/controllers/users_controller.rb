@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   def index
     @users = User.order('created_at DESC')
     @tweets = Tweet.order('created_at DESC')
-    @current_user_followings = current_user.followeds
+    @current_user_following = current_user.followeds
   end
 
   def new
