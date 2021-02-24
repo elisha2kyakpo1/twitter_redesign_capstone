@@ -13,9 +13,9 @@ class VotesController < ApplicationController
     vote = Vote.find_by(id: params[:id], voter: current_user, tweet_id: params[:tweet_id])
     if vote
       vote.destroy
-      redirect_to root_path, notice: 'You disvoted a tweet.'
+      redirect_to root_path, notice: 'You unvoted a tweet.'
     else
-      redirect_to root_path, alert: 'You cannot disvote twwet that you did not vote before.'
+      redirect_to root_path, alert: 'You cannot unvote twwet that you did not vote before.'
     end
   end
 end
