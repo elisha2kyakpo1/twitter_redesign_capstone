@@ -14,7 +14,7 @@
 
               <% if current_user %>
               <div>
-                <div class="stats1"><%= link_to @current_user_followings.size %></div>
+                <div class="stats1"><%= link_to current_user.followeds.size %></div>
                 <p class="log_out mr-2">following</p>
               </div>
               <div>
