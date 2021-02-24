@@ -28,7 +28,7 @@ Here is a short video to take you through the app.
 
 Note: the video only shows the screen due to camera driver not working on my laptop.
 
-[Getting started Viddeo]()
+[Getting started Viddeo](https://www.loom.com/share/631c333bed114bd78a324647b3621757)
 
 ## Setup
 
