@@ -35,7 +35,7 @@
     </section>
 
    <section class="sec1 p-0">
-      <header class="header position-sticky">
+      <header class="header">
          <% if current_user %>
          <%= link_to 'Log Out', logout_path(session), class: 'log_out_btn', method: :delete %>
          <% end %>
