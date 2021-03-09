@@ -35,13 +35,12 @@
     </section>
 
    <section class="sec1 p-0">
-    <header class="header position-sticky">
-      <% if current_user %>
-        <%= link_to 'Log Out', logout_path(session), class: 'log_out_btn', method: :delete %>
-      <% end %>
-    </header>
-
     <section class="container-inner d-flex">
+      <header class="header position-sticky">
+         <% if current_user %>
+         <%= link_to 'Log Out', logout_path(session), class: 'log_out_btn', method: :delete %>
+         <% end %>
+      </header>
       <section class="tweets-container">
         <nav class = "navbar1">
           <% if current_user %>
