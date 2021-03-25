@@ -20,7 +20,7 @@ A follower/followed is a user, therefore, a self join relationship is created be
 
 Enjoy app features by openning the link below in the blowser.
 
-[Live link](https://tweet-redesign.herokuapp.com/)
+[Live link](https://tweet-social.herokuapp.com/)
 
 ### Have a copy
 
