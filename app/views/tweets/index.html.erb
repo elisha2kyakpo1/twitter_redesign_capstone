@@ -1,5 +1,5 @@
-<section class="">
-   <section class="sec2">
+<section class="row">
+   <section class="sec2 col-2">
       <div class="logout">
         <div class="profile d-flex  mt-2">
          <div class="d-flex">
@@ -36,7 +36,7 @@
       </div>
     </section>
 
-   <section class="sec1 p-0">
+   <section class="sec1 col-10 p-0">
       <header class="header">
          <% if current_user %>
          <%= link_to 'Log Out', logout_path(session), class: 'log_out_btn', method: :delete %>

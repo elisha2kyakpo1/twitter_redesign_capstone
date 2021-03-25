@@ -2,6 +2,22 @@
   <p class="notice"><%= notice %></p>
   <div class="signup-page mt-40">
     <div class="sign-div">
+      <div class="border-form-div">
+        <%= form_for(@user, class: "")  do |f| %>
+          <% if @user.errors.any? %>
+            <div id="error_explanation">
+            <h4 class="text-dager"><%= pluralize(@user.errors.count, "error") %> prevented this operation! </h4>
+
+            <div>
+              <% @user.errors.full_messages.each do |message| %> 
+
+                <p class="text-danger"><%= message %></p>
+              <% end %>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+
       <h2>Sign up</h2>
 
       <%= form_for @user do |f| %>
