@@ -4,7 +4,7 @@
         <div class="profile d-flex  mt-2">
           <div class="d-flex">
             <% if current_user %>
-             <% if current_user.photo %>
+             <% if current_user.photo_url %>
               <div class="photo"><%= link_to image_tag(current_user.photo_url), user_path(current_user) %></div>
              <% end %>
               <h5 class="log"><%= link_to current_user.username, user_path(current_user), class: 'log' %></h5>
@@ -47,7 +47,7 @@
     <section class="container-inner d-flex">
       <section class="tweets-container">
         <div>
-          <% if @user.cover_image %>
+          <% if @user.cover_image_url %>
             <div class="cover_image"> <%=link_to image_tag(@user.cover_image_url), user_path(@user) %></div>
           <% end %>
         </div>
@@ -93,7 +93,11 @@
 
       <article class="articles p-0 col-4">
         <div class="articles_inner">
-         
+          <div class="my-4">
+            <% if @user.photo_url %>
+              <div class="photo"><%= link_to image_tag(@user.photo_url), user_path(@user) %></div>
+            <% end %>
+          </div>
           <h4><%= link_to @user.full_name.titleize, user_path %></h4>
           <p>@<%= link_to @user.username.titleize, user_path %></p>
           <% if current_user.id != @user.id %>
