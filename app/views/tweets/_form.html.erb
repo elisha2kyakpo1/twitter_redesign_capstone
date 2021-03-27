@@ -1,13 +1,13 @@
-<div class="create_tweet">
-  <div class="container-fluid d-flex tweet_create flex-1">
-    <div class="form">
-      <%= form_for @tweet do |form| %>
-          <%= form.label :Tweet_Something %><br>
-          <%= form.text_area :text, class: 'tweet',cols: 60, placeholder: 'Compose new tweet' %>
-        <div class="actions">
-          <%= form.submit 'Tweet', class: 'submit' %>
-        </div>
-      <% end %>
+
+<div class="form">
+  <%= form_for @tweet do |form| %>
+    <div class="form-flex d-flex">
+      <div>
+        <%= form.text_area :text, class: 'tweet',cols: 78, placeholder: 'Compose new tweet' %>
+      </div>
+      <div>
+        <%= form.submit 'Tweet', class: 'submit' %>
+      </div>
     </div>
-  </div>
+  <% end %>
 </div>

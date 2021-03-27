@@ -38,10 +38,11 @@
 
    <section class="sec1 col-10 p-0">
       <header class="header">
-         <p class="mx-auto" id="notice"><%= notice %></p>
-         <% if current_user %>
-         <%= link_to 'Log Out', logout_path(session), class: 'log_out_btn', method: :delete %>
-         <% end %>
+        <div class="logo ml-2">Ed</div>
+        <p class="mx-auto" id="notice"><%= notice %></p>
+        <% if current_user %>
+          <%= link_to 'Log Out', logout_path(session), class: 'log_out_btn', method: :delete %>
+        <% end %>
       </header>
     <section class="container-inner d-flex">
       <section class="tweets-container">
@@ -94,9 +95,9 @@
                     <% if current_user.id != user.id %>
                       <% if !current_user.following?(user) %>
                         <% if user.photo_url %>
-                          <div class="photo-user w-10"><%= image_tag(user.photo_url) %></div>
+                          <div class="photo-user"><%= link_to image_tag(user.photo_url), user_path(user), class: 'user-photo' %></div>
                         <% end %>
-                      <h4><%= link_to user.full_name.titleize, user_path(user), class: 'to_follow' %></h4>
+                        <h4><%= link_to user.full_name.titleize, user_path(user), class: 'to_follow' %></h4>
                         <%= link_to 'follow', follow_user_path(user), class: 'unfollow' %>
                       <% end %>
                     <% end %>

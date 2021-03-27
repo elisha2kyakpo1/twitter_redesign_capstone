@@ -39,6 +39,7 @@
 
   <section class="sec1 col-10 p-0">
     <header class="header">
+      <div class="logo ml-2">Ed</div>
       <% if current_user %>
         <%= link_to 'Log Out', logout_path(session), class: 'log_out_btn', method: :delete %>
       <% end %>
@@ -93,7 +94,7 @@
 
       <article class="articles p-0 col-4">
         <div class="articles_inner">
-          <div class="my-4">
+          <div class="my-2">
             <% if @user.photo_url %>
               <div class="photo"><%= link_to image_tag(@user.photo_url), user_path(@user) %></div>
             <% end %>
