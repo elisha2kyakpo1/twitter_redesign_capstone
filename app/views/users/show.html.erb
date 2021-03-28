@@ -82,7 +82,7 @@
                     <h4 class="author"><%= link_to tweet.author.username, user_path(tweet.author) %></h4>
                     <p class="authored"><%= tweet.text %></p>
                      <%= vote_or_unvote_btn(tweet)  %>
-                    <%= 'Vote(s)' %><%= tweet.votes.count %> 
+                    <i class="fas fa-heart"></i><%= tweet.votes.count %> 
                     <small><%= time_ago_in_words(tweet.created_at) %> ago </small>
              
                 </div>
