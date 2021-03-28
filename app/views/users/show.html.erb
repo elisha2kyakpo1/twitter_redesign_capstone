@@ -6,6 +6,8 @@
             <% if current_user %>
              <% if current_user.photo_url %>
               <div class="photo"><%= link_to image_tag(current_user.photo_url), user_path(current_user) %></div>
+              <% else %>
+                <i class="fas fa-user-circle user-img"></i>
              <% end %>
               <h5 class="log"><%= link_to current_user.username, user_path(current_user), class: 'log' %></h5>
             <% end %>
@@ -81,10 +83,11 @@
                 <div class="author-data">
                     <h4 class="author"><%= link_to tweet.author.username, user_path(tweet.author) %></h4>
                     <p class="authored"><%= tweet.text %></p>
+                     <h4><%= link_to edit_tweet_path(tweet), class: "edit" do %><i class="fas fa-pencil-alt text-secondary ml-2 pencil" aria-hidden="true" target="_blank"></i><% end %></h4>
                      <%= vote_or_unvote_btn(tweet)  %>
-                    <i class="fas fa-heart"></i><%= tweet.votes.count %> 
+                    <i class="fas fa-heart text-danger"></i><%= tweet.votes.count %> 
                     <small><%= time_ago_in_words(tweet.created_at) %> ago </small>
-             
+                                 
                 </div>
               <% end %>
             </div>
@@ -98,9 +101,11 @@
           
             <% if @user.photo_url %>
               <div class="photo"><%= link_to image_tag(@user.photo_url), user_path(@user) %></div>
+              <% else %>
+                <i class="fas fa-user-circle user-img"></i>
             <% end %>
           </div>
-          <h4><%= link_to @user.full_name.titleize, user_path %>
+          <h4><%= link_to @user.full_name.titleize, user_path(@user) %>
           <%= link_to edit_user_path, class: "edit" do %><i class="fas fa-pencil-alt text-secondary ml-2 pencil" aria-hidden="true" target="_blank"></i><% end %></h4>
 
           <p>@<%= link_to @user.username.titleize, user_path %></p>
@@ -133,10 +138,18 @@
           <div>
             <h4 class="text-center pt-2">Followed by</h4>
             <hr class="mb-0">
-            <div class="container-fluid">
-              <% @user_followed_by.each do |follow| %>
-                <h4><%= link_to follow.full_name.titleize, user_path(follow), class: 'to_follow' %><h4>
-              <% end %>
+            <div class="container-fluid mt-3">
+              <div class="d-flex followed-by">
+                <% @user_followed_by.each do |follow| %>
+                  
+                  <% if follow.photo_url %>
+                    <div class="photo"><%= link_to image_tag(follow.photo_url), user_path(follow) %></div>
+                  <% else %>
+                    <i class="fas fa-user-circle user-img"></i>
+                  <% end %>
+                  <h4><%= link_to follow.full_name.titleize, user_path(follow), class: 'to_follow' %><h4>
+                <% end %>
+              </div>
             </div>
           </div>          
         </div>

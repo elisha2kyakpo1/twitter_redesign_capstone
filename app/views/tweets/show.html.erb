@@ -1,12 +1,16 @@
-<p id="notice"><%= notice %></p>
+<div class="edit-div d-flex">
+  <div>
+    <p id="notice"><%= notice %></p>
 
-<p>
-  <%= @tweet.text %>
-</p>
+    <p>
+      <%= @tweet.text %>
+    </p>
 
-<p>
-  <%= @user.username.titleize %>
-</p>
+    <p>
+      <%= @user.username.titleize %>
+    </p>
 
-<%= link_to 'Edit', edit_tweet_path(@tweet) %> |
-<%= link_to 'Back', tweets_path %>
+    <%= link_to 'Edit', edit_tweet_path(@tweet) %> |
+    <%= link_to 'Back', tweets_path %>
+  </div>
+</div>

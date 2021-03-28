@@ -6,6 +6,8 @@
             <% if current_user %>
                <% if current_user.photo_url %>
                   <div class="photo"><%= link_to image_tag(current_user.photo_url), user_path(current_user) %></div>
+                <% else %>
+                  <i class="fas fa-user-circle user-img"></i>
                <% end %>
               <h5 class="log"><%= link_to current_user.username, user_path(current_user), class: 'log' %></h5>
             <% end %>
@@ -74,7 +76,7 @@
                     <small><%= time_ago_in_words(tweet.created_at) %> ago </small>
                     <p class="authored"><%= tweet.text %></p>
                     <%= vote_or_unvote_btn(tweet)  %>
-                    <%= 'Vote(s)' %><%= tweet.votes.count %> 
+                    <i class="fas fa-heart text-danger"></i><%= tweet.votes.count %> 
                   <% end %>
                 </div>
               <% end %>
@@ -96,6 +98,8 @@
                       <% if !current_user.following?(user) %>
                         <% if user.photo_url %>
                           <div class="photo-user"><%= link_to image_tag(user.photo_url), user_path(user), class: 'user-photo' %></div>
+                        <% else %>
+                          <i class="fas fa-user-circle user-img"></i>
                         <% end %>
                         <h4><%= link_to user.full_name.titleize, user_path(user), class: 'to_follow' %></h4>
                         <%= link_to 'follow', follow_user_path(user), class: 'unfollow' %>

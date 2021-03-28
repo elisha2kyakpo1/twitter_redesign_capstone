@@ -99,8 +99,6 @@ footer {
 }
 
 .header {
-  top: 0;
-  z-index: 1;
   padding-bottom: 10px;
   padding-top: 10px;
   background-color: #1da1f2;
@@ -366,11 +364,25 @@ a span,
   width: 50px;
 }
 
+.follow-by div {
+  justify-content: center;
+}
+
+.edit-div {
+  justify-content: center;
+}
+
 .photo a img {
   width: 100%;
   height: 100%;
   border-radius: 100%;
   object-fit: cover;
+}
+
+.user-img {
+  font-size: 60px;
+  float: left;
+  clear: both;
 }
 
 .cover_image {
@@ -381,6 +393,7 @@ a span,
   width: 100%;
   height: 150px;
   object-fit: cover;
+  margin-top: 8px;
 }
 
 a span {

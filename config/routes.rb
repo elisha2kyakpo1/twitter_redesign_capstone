@@ -11,7 +11,10 @@ Rails.application.routes.draw do
       get '/unfollow/', to: 'users#unfollow_user'
     end
   end
-  resources :tweets, only: %i[index new create show] do
+  resources :tweets do
+    post '/tweet/', to: 'tweet#index'
+    put '/tweet/', to: 'tweet#create'
+    get '/tweet/:id', to: 'tweet#show'
     resources :votes, only: %i[vote unvote] 
       get 'vote', to: 'votes#vote' 
       get 'unvote', to: 'votes#unvote' 
