@@ -7,6 +7,16 @@ body {
   overflow-x: hidden;
 }
 
+.pencil {
+  font-size: 16px;
+  text-decoration: none;
+}
+
+.edit {
+  float: right;
+  clear: both;
+}
+
 .stats2,
 .alert,
 .div-user,
