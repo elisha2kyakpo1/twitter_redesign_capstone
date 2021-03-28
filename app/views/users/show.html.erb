@@ -83,7 +83,9 @@
                 <div class="author-data">
                     <h4 class="author"><%= link_to tweet.author.username, user_path(tweet.author) %></h4>
                     <p class="authored"><%= tweet.text %></p>
+                    <% if current_user  == tweet.author %>
                      <h4><%= link_to edit_tweet_path(tweet), class: "edit" do %><i class="fas fa-pencil-alt text-secondary ml-2 pencil" aria-hidden="true" target="_blank"></i><% end %></h4>
+                     <% end %>
                      <%= vote_or_unvote_btn(tweet)  %>
                     <i class="fas fa-thumbs-up text-primary"></i><%= tweet.votes.count %> 
                     <small><%= time_ago_in_words(tweet.created_at) %> ago </small>
@@ -105,10 +107,10 @@
                 <i class="fas fa-user-circle user-img"></i>
             <% end %>
           </div>
-          <h4><%= link_to @user.full_name.titleize, user_path(@user) %>
+          <h4 class="mb-0"><%= link_to @user.full_name.titleize, user_path(@user) %>
           <%= link_to edit_user_path, class: "edit" do %><i class="fas fa-pencil-alt text-secondary ml-2 pencil" aria-hidden="true" target="_blank"></i><% end %></h4>
 
-          <p>@<%= link_to @user.username.titleize, user_path %></p>
+          <p class="mt-0">@<%= link_to @user.username.titleize, user_path %></p>
           <% if current_user.id != @user.id %>
             <% if current_user.following?(@user) %>
               <%= link_to 'unfollow', unfollow_user_path(@user), method: :delete, class: 'unfollow' %>
@@ -139,17 +141,19 @@
             <h4 class="text-center pt-2">Followed by</h4>
             <hr class="mb-0">
             <div class="container-fluid mt-3">
-              <div class="d-flex followed-by">
+              <div class="container">
                 <% @user_followed_by.each do |follow| %>
-                  
-                  <% if follow.photo_url %>
-                    <div class="photo"><%= link_to image_tag(follow.photo_url), user_path(follow) %></div>
-                  <% else %>
-                    <i class="fas fa-user-circle user-img mr-1"></i>
-                  <% end %>
-                  <h4><%= link_to follow.full_name.titleize, user_path(follow), class: 'to_follow' %><h4>
+                  <h4>
+                    <% if follow.photo_url %>
+                      <%= link_to image_tag(follow.photo_url), user_path(follow), class: 'userimg' %>
+                    <% else %>
+                      <i class="fas fa-user-circle user-img mr-2"></i>
+                    <% end %>
+                    <%= link_to follow.full_name.titleize, user_path(follow), class: 'to_follow f-by mt-0' %>
+                  </h4>
                 <% end %>
               </div>
+              <div class="flex-1"></div>
             </div>
           </div>          
         </div>

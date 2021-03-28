@@ -357,21 +357,23 @@ a span,
   justify-content: space-around;
 }
 
-.photo {
+.photo,
+.userimg {
   border-radius: 100%;
   margin-right: 15px;
   height: 50px;
   width: 50px;
 }
 
-.follow-by div {
-  justify-content: center;
+.userimg {
+  display: inline-block;
 }
 
 .edit-div {
   justify-content: center;
 }
 
+.userimg img,
 .photo a img {
   width: 100%;
   height: 100%;
@@ -385,6 +387,7 @@ a span,
   clear: both;
 }
 
+.follow-by,
 .cover_image {
   width: 100%;
 }
@@ -393,7 +396,6 @@ a span,
   width: 100%;
   height: 150px;
   object-fit: cover;
-  margin-top: 8px;
 }
 
 a span {
