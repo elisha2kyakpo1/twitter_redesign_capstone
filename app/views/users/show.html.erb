@@ -108,7 +108,10 @@
             <% end %>
           </div>
           <h4 class="mb-0"><%= link_to @user.full_name.titleize, user_path(@user) %>
-          <%= link_to edit_user_path, class: "edit" do %><i class="fas fa-pencil-alt text-secondary ml-2 pencil" aria-hidden="true" target="_blank"></i><% end %></h4>
+            <% if current_user == @user %>
+              <%= link_to edit_user_path, class: "edit" do %><i class="fas fa-pencil-alt text-secondary ml-2 pencil" aria-hidden="true" target="_blank"></i><% end %>
+            <% end %>
+          </h4>
 
           <p class="mt-0">@<%= link_to @user.username.titleize, user_path %></p>
           <% if current_user.id != @user.id %>
