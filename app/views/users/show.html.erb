@@ -150,7 +150,7 @@
                     <% if follow.photo_url %>
                       <%= link_to image_tag(follow.photo_url), user_path(follow), class: 'userimg' %>
                     <% else %>
-                      <i class="fas fa-user-circle user-img mr-2"></i>
+                      <i class="fas fa-user-circle user-img"></i>
                     <% end %>
                     <%= link_to follow.full_name.titleize, user_path(follow), class: 'to_follow f-by mt-0' %>
                   </h4>
