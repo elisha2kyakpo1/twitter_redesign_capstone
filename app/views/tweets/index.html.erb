@@ -103,12 +103,14 @@
                     <div class="container-fluid">
                     <% if current_user.id != user.id %>
                       <% if !current_user.following?(user) %>
+                      <h4>
                         <% if user.photo_url %>
-                          <div class="photo-user"><%= link_to image_tag(user.photo_url), user_path(user), class: 'user-photo' %></div>
+                          <div class="photo-user"><%= link_to image_tag(user.photo_url), user_path(user), class: 'user-photo' %>
                         <% else %>
                           <i class="fas fa-user-circle user-img"></i>
                         <% end %>
-                        <h4><%= link_to user.full_name.titleize, user_path(user), class: 'to_follow' %></h4>
+                        <%= link_to user.full_name.titleize, user_path(user), class: 'to_follow' %>
+                        </h4>
                         <%= link_to 'follow', follow_user_path(user), class: 'unfollow' %>
                       <% end %>
                     <% end %>

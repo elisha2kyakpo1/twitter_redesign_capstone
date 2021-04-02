@@ -51,7 +51,8 @@
       <section class="tweets-container">
         <div>
           <% if @user.cover_image_url %>
-            <div class="cover_image"> <%=link_to image_tag(@user.cover_image_url), user_path(@user) %></div>
+            <div class="cover_image" style="background-image: url('<%= @user.cover_image_url %>');"></div>
+            <div class="cover_imag"> <%#=link_to image_tag(@user.cover_image_url), user_path(@user) %></div>
           <% end %>
         </div>
 
@@ -81,15 +82,24 @@
               <p id="notice"><%= notice %></p>
               <% @user_tweets.each do |tweet| %>
                 <div class="author-data">
-                    <h4 class="author"><%= link_to tweet.author.username, user_path(tweet.author) %></h4>
-                    <p class="authored"><%= tweet.text %></p>
+                    <h4 class="author">
+                      <% if tweet.author.photo_url %>
+                        <%= link_to image_tag(tweet.author.photo_url), user_path(tweet.author), class: 'userimg' %>
+                      <% else %>
+                        <i class="fas fa-user-circle user-img"></i>
+                      <% end %>
+                      <%= link_to tweet.author.username, user_path(tweet.author) %>
+                    </h4>
+                    
                     <% if current_user  == tweet.author %>
                      <h4><%= link_to edit_tweet_path(tweet), class: "edit" do %><i class="fas fa-pencil-alt text-secondary ml-2 pencil" aria-hidden="true" target="_blank"></i><% end %></h4>
                      <% end %>
-                     <%= vote_or_unvote_btn(tweet)  %>
-                    <i class="fas fa-thumbs-up text-primary"></i><%= tweet.votes.count %> 
-                    <small><%= time_ago_in_words(tweet.created_at) %> ago </small>
-                                 
+                     <div class="ml-5">
+                        <p class="authored"><%= tweet.text %></p>
+                        <%= vote_or_unvote_btn(tweet)  %>
+                        <i class="fas fa-thumbs-up text-primary"></i><%= tweet.votes.count %> 
+                        <small><%= time_ago_in_words(tweet.created_at) %> ago </small>
+                      </div>
                 </div>
               <% end %>
             </div>

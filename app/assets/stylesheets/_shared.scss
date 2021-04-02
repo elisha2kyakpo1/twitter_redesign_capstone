@@ -381,6 +381,15 @@ a span,
   object-fit: cover;
 }
 
+.cover_image {
+  height: 200px;
+  width: 100%;
+  padding-top: 50px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 .user-img {
   font-size: 50px;
 }
