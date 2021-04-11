@@ -91,14 +91,14 @@
                     </h4>
                     
                     <% if current_user  == tweet.author %>
-                     <h4><%= link_to edit_tweet_path(tweet), class: "edit" do %><i class="fas fa-pencil-alt text-secondary ml-2 pencil" aria-hidden="true" target="_blank"></i><% end %></h4>
-                     <% end %>
-                     <div class="ml-5">
-                        <p class="authored"><%= tweet.text %></p>
-                        <%= vote_or_unvote_btn(tweet)  %>
-                        <i class="fas fa-thumbs-up text-primary"></i><%= tweet.votes.count %> 
-                        <small><%= time_ago_in_words(tweet.created_at) %> ago </small>
-                      </div>
+                      <h4><%= link_to edit_tweet_path(tweet), class: "edit" do %><i class="fas fa-pencil-alt text-secondary ml-2 pencil" aria-hidden="true" target="_blank"></i><% end %></h4>
+                    <% end %>
+                    <div class="ml-5">
+                      <p class="authored"><%= tweet.text %></p>
+                      <%= vote_or_unvote_btn(tweet)  %>
+                      <i class="fas fa-thumbs-up text-primary"></i><%= tweet.votes.count %> 
+                      <small><%= time_ago_in_words(tweet.created_at) %> ago </small>
+                    </div>
                 </div>
               <% end %>
             </div>

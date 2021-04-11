@@ -71,8 +71,7 @@
              
               <% @tweets.each do |tweet| %>
                 <div class="author-data container-fluid ml-2">
-                  <% if @current_user_followings %>
-                    <% if current_user.following?(tweet.author) %>
+                    <% if current_user.following?(tweet.author) || current_user.followeds %>
                       <% if tweet.author.photo_url %>
                           <div class="photo-user"><%= link_to image_tag(tweet.author.photo_url), user_path(tweet.author), class: 'user-photo' %></div>
                         <% else %>
@@ -80,11 +79,13 @@
                         <% end %>
                       <h4 class="log_user"><%= link_to tweet.author.username.titleize, user_path(tweet.author), class: 'user_name' %></h4>
                       <small><%= time_ago_in_words(tweet.created_at) %> ago </small>
-                      <p class="authored"><%= tweet.text %></p>
-                      <div class="ml-5 container-fluid"><%= vote_or_unvote_btn(tweet)  %>
-                      <i class="fas fa-thumbs-up text-primary"></i><%= tweet.votes.count %></div> 
+                      
+                      <div class="ml-5 container-fluid">
+                        <p class="authored"><%= tweet.text %></p>
+                        <%= vote_or_unvote_btn(tweet)  %>
+                        <i class="fas fa-thumbs-up text-primary"></i><%= tweet.votes.count %>
+                      </div> 
                     <% end %>
-                  <% end %>
                 </div>
               <% end %>
             </div>
