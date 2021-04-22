@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     post '/users/', to: 'users#index'
     put '/users/', to: 'users#create'
     get '/users/:id', to: 'users#show'
+    get 'delete', to: 'users#destroy'
     member do
       get '/follow/', to: 'users#follow_user'
       get '/unfollow/', to: 'users#unfollow_user'

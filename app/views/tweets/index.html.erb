@@ -63,7 +63,9 @@
         <div class="tweet-show">
           <div>
             <div>
-              <h5 class="new_tweets">8 new tweets<h5>
+              <% if !@tweets.any? %>
+                <h5 class="new_tweets">There are no tweets!<h5>
+              <% end %>
             </div>
             <hr>
 
