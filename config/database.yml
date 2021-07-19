@@ -23,7 +23,7 @@ default: &default
 
 development:
   <<: *default
-  database: twitter_redesign_capstone_development
+  database: twitter_redesign_capstone
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -81,6 +81,6 @@ test:
 #
 production:
   <<: *default
-  database: twitter_redesign_capstone_production
-  username: twitter_redesign_capstone
-  password: <%= ENV['TWITTER_REDESIGN_CAPSTONE_DATABASE_PASSWORD'] %>
+  database: twitter_redesign_capstone
+  username: twitter_redesign
+  password: <%= ENV['PASSWORD'] %>

@@ -1,0 +1,18 @@
+<div class ="signin">
+  <p><%= notice %></p>
+  <div>
+    <div class="sign-div">
+      <%= form_tag sessions_path do %>
+      <div class="field">
+        <div class = 'inner-div'>
+          <h2>Login</h2>
+        
+            <%= text_field_tag :username, nil, placeholder: "Username", class: 'text' %><br>
+            <%= submit_tag 'Sign In', class: 'submit' %>
+          </div>
+        </div>
+      <% end %><br>
+      <p class=>Not a member?<%= link_to 'Sign Up', new_user_path, class: 'signup'%></p>
+    </div>
+  </div>
+</div>

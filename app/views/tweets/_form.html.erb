@@ -1,0 +1,13 @@
+
+<div class="form">
+  <%= form_for @tweet do |form| %>
+    <div class="form-flex d-flex">
+      <div>
+        <%= form.text_area :text, class: 'tweet',cols: 78, placeholder: 'Compose new tweet' %>
+      </div>
+      <div>
+        <%= form.submit 'Tweet', class: 'submit' %>
+      </div>
+    </div>
+  <% end %>
+</div>
