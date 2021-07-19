@@ -34,45 +34,48 @@ Note: the video only shows the screen due to camera driver not working on my lap
 ## Setup
 
 To get started, you should first get this file in your local machine by cloning or forking this project or typing in your terminal
-
-> git clone https://github.com/elisha2kyakpo1/twitter_redesign_capstone.git
-
+```
+ git clone https://github.com/elisha2kyakpo1/twitter_redesign_capstone.git
+```
 Before you start using the app, you need to be sure that you have Ruby installed on your computer, by typing.
-
-> ruby -v
-
+```
+ ruby -v
+```
 You should see your version of ruby.
 If it's not installed in your system, follow this [guide](https://www.ruby-lang.org/en/documentation/installation/) and it will help you to get it done.
 
 Then you can install rails using this command,
-
-> gem install rails
-
+```
+ gem install rails
+```
 And you can also check your rails version by typing in your terminal
-
-> rails -version
-
+```
+ rails -version
+```
 After that do bundle install to install all required gems and dependences
-
-> bundle install
-
+```
+ bundle install
+```
 Install yarn by running the command below
-> yarn install
-
+```
+ yarn install
+```
 Since we are using postgresql database, run this command in your tenimal to create the database
-
-> rails db:create
-
+```
+ rails db:create
+```
 Finally, run the migration to populate your database to have the tables
-> rails db:migrate
-
+```
+ rails db:migrate
+```
 You then interract with the program from rails server on the web by
-
-> rails s
-
+```
+ rails s
+```
 Open your favourite blowser and type the command below
-> http://localhost:3000
-
+```
+ http://localhost:3000
+```
 ## Contributors
 
 ## Elisha Kyakopo
