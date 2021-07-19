@@ -9,13 +9,14 @@ A user can create many tweets. A user can follow many users and a user can have 
 A follower/followed is a user, therefore, a self join relationship is created between the user and the following table.
 
 ## Built with
-
-* Ruby on rails
 * Postgresql
 * rubocop linters
-* Vs code
 * bootstrap
-
+- <code><img height="20" src="https://www.ruby-lang.org/images/header-ruby-logo.png"></code><br>
+-  <code><img height="20" src="https://rubyonrails.org/images/rails-logo.svg"></code><br>
+- ![Git](https://img.shields.io/badge/-Git-05122A?style=flat&logo=git)&nbsp;<br>
+- ![GitHub](https://img.shields.io/badge/-GitHub-05122A?style=flat&logo=github)&nbsp;<br>
+- ![Visual Studio Code](https://img.shields.io/badge/-Visual%20Studio%20Code-05122A?style=flat&logo=visual-studio-code&logoColor=007ACC)&nbsp;
 ## Getting Started
 
 Enjoy app features by openning the link below in the blowser.
