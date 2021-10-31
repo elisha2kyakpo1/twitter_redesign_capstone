@@ -1,0 +1,49 @@
+<div class="cover">
+  <p class="notice"><%= notice %></p>
+  <div class="signup-page mt-40">
+    <div class="sign-div">
+      <div class="border-form-div">
+        <%= form_for(@user, class: "")  do |f| %>
+          <% if @user.errors.any? %>
+            <div id="error_explanation">
+            <h4 class="text-dager"><%= pluralize(@user.errors.count, "error") %> prevented this operation! </h4>
+
+            <div>
+              <% @user.errors.full_messages.each do |message| %> 
+
+                <p class="text-danger"><%= message %></p>
+              <% end %>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+
+      <h2>Sign up</h2>
+
+      <%= form_for @user do |f| %>
+          
+        <div class="field">
+
+          <%= f.text_field :username, autofocus: true, autocomplete: "username", placeholder: 'username', class: 'text', :required => true %><br>
+          <%= f.text_field :full_name, autofocus: true, autocomplete: "fullname", placeholder: 'fullname', class: 'text', :required => true %>
+        </div>
+
+        <div>
+          <p>
+            <%= f.label :Profile_photo %>
+            <%= f.file_field :photo %>
+          </p>
+          <p>
+            <%= f.label :cover_image %>
+            <%= f.file_field :cover_image %>
+          </p>
+        </div>
+
+        <div class="actions">
+          <%= f.submit "Sign up", class: 'submit' %>
+        </div>
+      <% end %>
+        <p class=>Aready a member?<%= link_to 'Sign In', new_session_path, class: 'signup'%></p>
+    </div>
+  </div>
+</div>
