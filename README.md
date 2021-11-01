@@ -21,7 +21,7 @@ A follower/followed is a user, therefore, a self join relationship is created be
 
 Enjoy app features by openning the link below in the blowser.
 
-[Live link](https://doublekpi.herokuapp.com/)
+[Live link](https://twitter-redesign-app.herokuapp.com/)
 
 ### Have a copy
 
