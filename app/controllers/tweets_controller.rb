@@ -3,8 +3,7 @@ class TweetsController < ApplicationController
   before_action :set_tweet, only: %i[show edit update destroy]
 
   def index
-    @tweet = Tweet.new
-    @tweets = Tweet.all.includes(:author).order('created_at DESC')
+    @tweets = Tweet.all.includes(:author, :votes).order('created_at DESC')
   end
 
   def show

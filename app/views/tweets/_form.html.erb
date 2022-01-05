@@ -1,6 +1,6 @@
 
 <div class="form">
-  <%= form_for @tweet do |form| %>
+  <%= form_with(model: @tweet) do |form| %>
     <div class="form-flex d-flex">
       <div>
         <%= form.text_area :text, class: 'tweet',cols: 78, placeholder: 'Compose new tweet' %>

@@ -85,7 +85,7 @@
                       <div class="ml-5 container-fluid">
                         <p class="authored"><%= tweet.text %></p>
                         <%= vote_or_unvote_btn(tweet)  %>
-                        <i class="fa fa-thumbs-up text-primary"></i><%= tweet.votes.count %>
+                        <i class="fa fa-thumbs-up text-primary"></i><%= tweet.votes.length %>
                       </div> 
                     <% end %>
                 </div>
@@ -107,12 +107,12 @@
                     <% if current_user.id != user.id %>
                       <% if !current_user.following?(user) %>
                       <h4>
-                        <% if user.photo_url %>
-                          <div class="photo-user"><%= link_to image_tag(user.photo_url), user_path(user), class: 'user-photo' %>
+                        <% if user.author.photo_url %>
+                          <div class="photo-user"><%= link_to image_tag(user.author.photo_url), user_path(user), class: 'user-photo' %>
                         <% else %>
                           <i class="fa fa-user-circle user-img"></i>
                         <% end %>
-                        <%= link_to user.full_name.titleize, user_path(user), class: 'to_follow' %>
+                        <%= link_to user.author.full_name.titleize, user_path(user), class: 'to_follow' %>
                         </h4>
                         <%= link_to 'follow', follow_user_path(user), class: 'unfollow' %>
                       <% end %>
