@@ -10,45 +10,44 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_31_063705) do
-
+ActiveRecord::Schema.define(version: 20_211_031_063_705) do
   # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
+  enable_extension 'plpgsql'
 
-  create_table "followings", force: :cascade do |t|
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.integer "follower_id"
-    t.integer "followed_id"
-    t.index ["follower_id", "followed_id"], name: "index_followings_on_follower_id_and_followed_id", unique: true
+  create_table 'followings', force: :cascade do |t|
+    t.datetime 'created_at', precision: 6, null: false
+    t.datetime 'updated_at', precision: 6, null: false
+    t.integer 'follower_id'
+    t.integer 'followed_id'
+    t.index %w[follower_id followed_id], name: 'index_followings_on_follower_id_and_followed_id', unique: true
   end
 
-  create_table "tweets", force: :cascade do |t|
-    t.text "text"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.integer "author_id"
+  create_table 'tweets', force: :cascade do |t|
+    t.text 'text'
+    t.datetime 'created_at', precision: 6, null: false
+    t.datetime 'updated_at', precision: 6, null: false
+    t.integer 'author_id'
   end
 
-  create_table "users", force: :cascade do |t|
-    t.string "username"
-    t.string "full_name"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.text "photo"
-    t.text "cover_image"
+  create_table 'users', force: :cascade do |t|
+    t.string 'username'
+    t.string 'full_name'
+    t.datetime 'created_at', precision: 6, null: false
+    t.datetime 'updated_at', precision: 6, null: false
+    t.text 'photo'
+    t.text 'cover_image'
   end
 
-  create_table "votes", force: :cascade do |t|
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.integer "voter_id"
-    t.integer "tweet_id"
+  create_table 'votes', force: :cascade do |t|
+    t.datetime 'created_at', precision: 6, null: false
+    t.datetime 'updated_at', precision: 6, null: false
+    t.integer 'voter_id'
+    t.integer 'tweet_id'
   end
 
-  add_foreign_key "followings", "users", column: "followed_id"
-  add_foreign_key "followings", "users", column: "follower_id"
-  add_foreign_key "tweets", "users", column: "author_id"
-  add_foreign_key "votes", "tweets"
-  add_foreign_key "votes", "users", column: "voter_id"
+  add_foreign_key 'followings', 'users', column: 'followed_id'
+  add_foreign_key 'followings', 'users', column: 'follower_id'
+  add_foreign_key 'tweets', 'users', column: 'author_id'
+  add_foreign_key 'votes', 'tweets'
+  add_foreign_key 'votes', 'users', column: 'voter_id'
 end

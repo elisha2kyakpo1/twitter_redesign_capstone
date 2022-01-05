@@ -1,11 +1,11 @@
 require 'rails_helper'
 
-RSpec.describe "votes/show", type: :view do
+RSpec.describe 'votes/show', type: :view do
   before(:each) do
-    @vote = assign(:vote, Vote.create!())
+    @vote = assign(:vote, Vote.create!)
   end
 
-  it "renders attributes in <p>" do
+  it 'renders attributes in <p>' do
     render
   end
 end

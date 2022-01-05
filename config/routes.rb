@@ -16,9 +16,9 @@ Rails.application.routes.draw do
     post '/tweet/', to: 'tweet#index'
     put '/tweet/', to: 'tweet#create'
     get '/tweet/:id', to: 'tweet#show'
-    resources :votes, only: %i[vote unvote] 
-      get 'vote', to: 'votes#vote' 
-      get 'unvote', to: 'votes#unvote' 
+    resources :votes, only: %i[vote unvote]
+    get 'vote', to: 'votes#vote'
+    get 'unvote', to: 'votes#unvote'
   end
   root to: 'tweets#index'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html

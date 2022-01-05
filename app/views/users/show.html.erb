@@ -7,7 +7,7 @@
              <% if current_user.photo_url %>
               <div class="photo"><%= link_to image_tag(current_user.photo_url), user_path(current_user) %></div>
               <% else %>
-                <i class="fas fa-user-circle user-img mr-2"></i>
+                <i class="fa fa-user-circle user-img mr-2"></i>
              <% end %>
               <h5 class="log"><%= link_to current_user.username, user_path(current_user), class: 'log' %></h5>
             <% end %>
@@ -31,9 +31,9 @@
 
         <div class="nav-side">
           <% if current_user %>
-            <div class="log-homes"><h6 class="log"><i class="fas fa-home text-primary mr-1 icon"></i><%= link_to 'HOME', tweets_path, class: 'log' %></h6></div>
-            <div class="log-homes"><h6 class="log"><i class="fas fa-user text-primary mr-1 icon"></i><%= link_to 'PROFILE', user_path(current_user), class: 'log' %></h6></div>
-            <div class="log-homes"><h6 class="log"><i class="fas fa-user text-primary mr-1 icon"></i><%= link_to 'Delete account', user_delete_path(@user), class: 'log' %></h6></div>
+            <div class="log-homes"><h6 class="log"><i class="fa fa-home text-primary mr-1 icon"></i><%= link_to 'HOME', tweets_path, class: 'log' %></h6></div>
+            <div class="log-homes"><h6 class="log"><i class="fa fa-user text-primary mr-1 icon"></i><%= link_to 'PROFILE', user_path(current_user), class: 'log' %></h6></div>
+            <div class="log-homes"><h6 class="log"><i class="fa fa-user text-primary mr-1 icon"></i><%= link_to 'Delete account', user_delete_path(@user), class: 'log' %></h6></div>
           <% end %>
         </div>
       </div>
@@ -88,18 +88,18 @@
                       <% if tweet.author.photo_url %>
                         <%= link_to image_tag(tweet.author.photo_url), user_path(tweet.author), class: 'userimg' %>
                       <% else %>
-                        <i class="fas fa-user-circle user-img"></i>
+                        <i class="fa fa-user-circle user-img"></i>
                       <% end %>
                       <%= link_to tweet.author.username, user_path(tweet.author) %>
                     </h4>
                     
                     <% if current_user  == tweet.author %>
-                      <h4><%= link_to edit_tweet_path(tweet), class: "edit" do %><i class="fas fa-pencil-alt text-secondary ml-2 pencil" aria-hidden="true" target="_blank"></i><% end %></h4>
+                      <h4><%= link_to edit_tweet_path(tweet), class: "edit" do %><i class="fa fa-pencil-alt text-secondary ml-2 pencil" aria-hidden="true" target="_blank"></i><% end %></h4>
                     <% end %>
                     <div class="ml-5">
                       <p class="authored"><%= tweet.text %></p>
                       <%= vote_or_unvote_btn(tweet)  %>
-                      <i class="fas fa-thumbs-up text-primary"></i><%= tweet.votes.count %> 
+                      <i class="fa fa-thumbs-up text-primary"></i><%= tweet.votes.count %> 
                       <small><%= time_ago_in_words(tweet.created_at) %> ago </small>
                     </div>
                 </div>
@@ -116,12 +116,12 @@
             <% if @user.photo_url %>
               <div class="photo"><%= link_to image_tag(@user.photo_url), user_path(@user) %></div>
               <% else %>
-                <i class="fas fa-user-circle user-img"></i>
+                <i class="fa fa-user-circle user-img"></i>
             <% end %>
           </div>
           <h4 class="mb-0"><%= link_to @user.full_name.titleize, user_path(@user) %>
             <% if current_user == @user %>
-              <%= link_to edit_user_path, class: "edit" do %><i class="fas fa-pencil-alt text-secondary ml-2 pencil" aria-hidden="true" target="_blank"></i><% end %>
+              <%= link_to edit_user_path, class: "edit" do %><i class="fa fa-pencil-alt text-secondary ml-2 pencil" aria-hidden="true" target="_blank"></i><% end %>
             <% end %>
           </h4>
 
@@ -162,7 +162,7 @@
                     <% if follow.photo_url %>
                       <%= link_to image_tag(follow.photo_url), user_path(follow), class: 'userimg' %>
                     <% else %>
-                      <i class="fas fa-user-circle user-img"></i>
+                      <i class="fa fa-user-circle user-img"></i>
                     <% end %>
                     <%= link_to follow.full_name.titleize, user_path(follow), class: 'to_follow f-by mt-0' %>
                   </h4>
