@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :sessions, only: %i[new create logout_user]
-    get 'logout', to: 'sessions#logout_user'
+  delete 'logout', to: 'sessions#logout_user'
 
   resources :users do
     post '/users/', to: 'users#index'

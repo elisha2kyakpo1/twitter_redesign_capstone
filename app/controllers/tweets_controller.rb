@@ -4,8 +4,7 @@ class TweetsController < ApplicationController
 
   def index
     @tweet = Tweet.new
-    @tweets = Tweet.all.order('created_at DESC')
-    @users = User.all.order('created_at DESC')
+    @tweets = Tweet.all.includes(:author).order('created_at DESC')
   end
 
   def show

@@ -108,6 +108,8 @@ GEM
     erubi (1.10.0)
     execjs (2.8.1)
     ffi (1.15.4)
+    font-awesome-rails (4.7.0.8)
+      railties (>= 3.2, < 8.0)
     font-awesome-sass (5.15.1)
       sassc (>= 1.11)
     globalid (0.5.2)
@@ -288,6 +290,7 @@ DEPENDENCIES
   carrierwave (~> 2.0)
   database_cleaner
   dotenv-rails
+  font-awesome-rails
   font-awesome-sass
   jbuilder (~> 2.7)
   jquery-rails
