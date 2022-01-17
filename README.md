@@ -8,6 +8,8 @@ A user can create many tweets. A user can follow many users and a user can have 
 
 A follower/followed is a user, therefore, a self join relationship is created between the user and the following table.
 
+![Home page](app/assets/images/twitter-2.png)
+
 ## Built with
 * Postgresql
 * rubocop linters
